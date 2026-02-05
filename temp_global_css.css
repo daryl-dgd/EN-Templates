@@ -558,19 +558,18 @@ form .ProcessForm {
     padding: 64px 64px 0px;
 }
 .footer-inner {
-    padding-bottom: 32px 64px;
+    padding: 32px 64px;
 }
-.footer p {
-    margin: 0px;
+.footer-inner .footer-details p:last-child {
+    margin-bottom: 0px;
 }
-.footer-bottom {
-    background-color: var(--paletteColor3);
-    padding: 20px 0px;
-}
-.footer-inner > .frow-container {
+.footerBadges {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    gap: 24px;
 }
+
 
 /*Error Handling*/
 .ProcessForm .en__field--validationFailed {
