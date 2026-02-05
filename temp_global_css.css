@@ -1,0 +1,737 @@
+.en__Donation main {
+    min-height: 1000px;
+    margin: 60px 0px;
+}
+
+/*Donation Form*/
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 10pt;
+    /* background-image: url('https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2421/trees_BG.jpg?v=1720539554000'); */
+    background: var(--white);
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.en__hidden {
+    display: none !important;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+/* DF Header in Pagebuilder */
+body.en__Donation main {
+    margin: 0px;
+}
+body.en__Donation main .main-container {
+    max-width: 100%;
+    padding: 0px;
+}
+body.en__Donation form.en__component--page {
+    padding: 0px;
+}
+body.en__Donation .en__component--advrow.en__Donation {
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0px 20px;
+}
+body.en__Donation .en__component--advrow.custom-header {
+    background-color: var(--white);
+}
+body.en__Donation .en__component--advrow.custom-header .en__component--advcolumn {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.en__component--advrow.custom-header .en__component--advcolumn p {
+    margin: 0px;
+}
+
+/* EN Page Editor */
+#en__pagebuilder .en__hidden {
+    display: inherit !important;
+}
+#en__pagebuilder .en__hidden .bannerImgSrc {
+    max-width: 600px;
+}
+#en__pagebuilder .ProcessForm .en__field--donationAmt .en__field__input--radio + .en__field__label--item,
+#en__pagebuilder .ProcessForm .en__field--recurrpay .en__field__input--radio + .en__field__label--item {
+    background-color: var(--paletteColor5);
+    color: var(--black);
+}
+#en__pagebuilder .ProcessForm .en__field--donationAmt .en__field__input--radio:checked + .en__field__label--item,
+#en__pagebuilder .ProcessForm .en__field--recurrpay .en__field__input--radio:checked + .en__field__label--item {
+    background-color: var(--paletteColor1);
+    color: var(--white);
+}
+
+form.en__component--page {
+    margin: 0px auto 60px;
+    padding-top: 20px;
+}
+
+form .ProcessForm {
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 2px 4px 18px 0px rgb(0 0 0 / 35%);
+}
+
+.ProcessForm img.df-header-image {
+    display: none;
+}
+
+.ProcessForm .en__field--paycurrency {
+    display: none !important;
+}
+
+.ProcessForm .section-header-container {
+    border-top: 3px solid var(--paletteColor1);
+}
+
+.ProcessForm h2.section-header-container {
+    font-size: 30px;
+    font-weight: 700;
+    padding: 25px 0 0;
+    margin: 25px 0;
+}
+
+/*Gift Amount*/
+.ProcessForm .en__field--donationAmt.one-time-selected .en__field__element--radio .en__field__item.don-level.one-time {
+    display: flex;
+}
+
+.ProcessForm .en__field--donationAmt.one-time-selected .en__field__element--radio .en__field__item.don-level.monthly {
+    display: none;
+}
+
+.ProcessForm .en__field--donationAmt.monthly-selected .en__field__element--radio .en__field__item.don-level.one-time {
+    display: none;
+}
+
+.ProcessForm .en__field--donationAmt.monthly-selected .en__field__element--radio .en__field__item.don-level.monthly {
+    display: flex;
+}
+
+.ProcessForm .en__field--donationAmt>label,
+.ProcessForm .en__field--recurrpay>label {
+    display: none;
+}
+
+.ProcessForm .en__field--donationAmt .en__field__element--radio,
+.ProcessForm .en__field--recurrpay .en__field__element--radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    align-items: start;
+    font-size: 0;
+    line-height: 0;
+    margin: 0;
+    gap: 10px;
+}
+
+.ProcessForm .en__field--donationAmt input[type="radio"],
+.ProcessForm .en__field--recurrpay input[type="radio"] {
+    position: absolute;
+    left: -10000px;
+}
+
+.ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item:not(.en__field__item--other),
+.ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
+    display: flex;
+    flex: 1;
+    min-width: 175px;
+}
+
+.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__label--item,
+.ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__label--item {
+    display: block;
+    background: var(--paletteColor2);
+    color: var(--paletteColor1);
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 15px;
+    border: 3px solid var(--paletteColor1);
+    height: auto;
+}
+
+.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item.active .en__field__label--item,
+.ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item.active .en__field__label--item,
+.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item .en__field__label--item:hover,
+.ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item .en__field__label--item:hover {
+    background: var(--paletteColor1);
+    color: var(--paletteColor2);
+}
+
+.ProcessForm .en__field--donationAmt .en__field__element--radio .focus .en__field__label--item,
+.ProcessForm .en__field--recurrpay .en__field__element--radio .focus .en__field__label--item {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__input--other {
+    display: block;
+    background: var(--paletteColor1);
+    color: var(--paletteColor2);
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 15px;
+    border: 3px solid var(--paletteColor1);
+    height: auto;
+    margin: 0px;
+}
+
+/* Dollar sign fix */
+.ProcessForm .en__field--donationAmt .other-amt-input {
+	position: relative;
+}
+.ProcessForm .en__field--donationAmt .other-amt-input:before {
+	content: "$";
+	color: #fff;
+	font-size: 16px;
+	position: absolute;
+	left: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+}
+.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__input--other {
+	padding-left: 20px;
+	text-align: left;
+}
+
+.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__input--other:focus-visible {
+    outline: 0px;
+}
+
+.ProcessForm .en__field--donationAmt .en__field__element--radio .other-amt-input {
+    padding: 0px;
+}
+
+.ProcessForm label[for="en__field_transaction_feeCover"] {
+    white-space: normal;
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    display: inline;
+    max-width: inherit;
+}
+
+.ProcessForm .en__field--dirgift>label {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    line-height: inherit;
+    color: var(--paletteColor1);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ProcessForm .en__field--dirgift,
+.ProcessForm .en__field--dirgift .en__field__element--radio .en__field__item {
+    padding: 0px;
+    display: block;
+}
+
+.ProcessForm .en__field--gftrsn label {
+    display: none;
+}
+
+.ProcessForm .en__field__element--select,
+.ProcessForm .en__field__element--text {
+    width: 100%;
+}
+
+.ProcessForm select {
+    border: 1px solid var(--paletteColor1);
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--paletteColor2);
+    font-size: 1.6rem;
+    padding: 7px 30px 7px 7px;
+    min-height: 40px;
+    width: 100%;
+    max-width: 100%;
+    appearance: none;
+    background: var(--selectArrowSVG) calc(100% - 8px);
+}
+
+.ProcessForm input[type="text"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    background: var(--paletteColor2);
+    border: 1px solid var(--paletteColor1);
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 1.6rem;
+    min-height: 40px;
+    padding: 7px;
+    width: 100%;
+}
+
+.ProcessForm input[type="radio"] {
+    margin: 0 5px 20px 0;
+    height: 20px;
+    width: 20px;
+}
+
+.ProcessForm #en__field_transaction_dirgift1 {
+    margin-bottom: 0;
+}
+
+.ProcessForm .en__field__label {
+    display: inline-block;
+    width: auto;
+}
+
+.ProcessForm .en__field__element.en__field__element--textarea,
+.ProcessForm .en__field__element.en__field__element--email {
+    width: 100%;
+}
+
+.ProcessForm .en__field__input--calendar,
+.ProcessForm .en__field__input--email,
+.ProcessForm .en__field__input--number,
+.ProcessForm .en__field__input--password,
+.ProcessForm .en__field__input--range,
+.ProcessForm .en__field__input--telephone,
+.ProcessForm .en__field__input--text,
+.ProcessForm .en__field__input--textarea,
+.ProcessForm .en__rangeFieldLabels {
+    width: 100%;
+}
+
+.ProcessForm .en__field {
+    padding-bottom: 0;
+    margin: 16px 0 0;
+}
+
+/* eCard */
+.eCard-message {
+    max-width: 600px;
+    margin: 24px auto;
+}
+.eCard-message p {
+    margin-bottom: 0;
+}
+
+/*Billing Info*/
+.ProcessForm .donor-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.ProcessForm .donor-info .en__field {
+    display: block;
+    width: 100%;
+    margin: 16px 0 0;
+    padding: 0px;
+}
+
+.ProcessForm .donor-info:first-child .en__field:first-child {
+    margin-top: 0px;
+}
+
+.ProcessForm .donor-info .en__field .en__field__element {
+    display: block;
+}
+
+.ProcessForm .donor-info .en__field input,
+.ProcessForm .donor-info .en__field select {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+}
+
+.ProcessForm .donor-info .en__field input[type="text"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    background: var(--paletteColor2);
+    border: 1px solid var(--paletteColor1);
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 1.6rem;
+    min-height: 40px;
+    padding: 7px;
+    width: 100%;
+}
+
+.ProcessForm .donor-info .en__field select {
+    border: 1px solid var(--paletteColor1);
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--paletteColor2);
+    font-size: 1.6rem;
+    padding: 7px 30px 7px 7px;
+    min-height: 40px;
+    width: 100%;
+    max-width: 100%;
+    appearance: none;
+    background: var(--selectArrowSVG) calc(100% - 8px);
+}
+
+.ProcessForm .donor-info .en__field__item {
+    padding: 0px;
+}
+
+.ProcessForm .donor-info .en__field--title .en__field__item {
+    width: 100%;
+}
+
+.ProcessForm .donor-info .en__field--title .en__field__item select {
+    max-width: 100%;
+}
+
+.ProcessForm label {
+    white-space: normal;
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.ProcessForm .en__mandatory>label:before {
+    content: "* ";
+    color: #9c0003;
+}
+
+.ProcessForm .en__field--email-sign-up-form-opt-in {
+    padding: 0px;
+    margin: 16px 0px 0px;
+}
+
+.ProcessForm .en__field--email-sign-up-form-opt-in>label {
+    display: none;
+}
+
+.ProcessForm input[type="checkbox"] {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px 0 0;
+    vertical-align: top;
+}
+
+.ProcessForm .en__field--email-sign-up-form-opt-in .en__field__item label {
+    display: inline;
+    max-width: inherit;
+}
+
+/*Payment Info*/
+#payment_cc_type_row ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#payment_cc_type_row li {
+    display: inline;
+}
+
+#payment_cc_type_row label {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    line-height: inherit;
+    color: var(--paletteColor1);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ProcessForm .en__field--paymenttype {
+    display: none;
+}
+
+.ProcessForm .en__field__element--vgs,
+.ProcessForm #en__field_transaction_ccnumber {
+    width: 100%;
+}
+
+.ProcessForm .donor-info .en__field--ccexpire .en__field__element--splitselect {
+    display: flex;
+    gap: 10px;
+}
+
+.ProcessForm .en__field--ccexpire .en__field__element--splitselect>.en__field__item {
+    width: 50%;
+}
+
+/* .ProcessForm .donor-info .en__field--ccexpire,
+.ProcessForm .donor-info .en__field--ccvv {
+    margin-top: 0px;
+} */
+
+.ProcessForm #en__field_transaction_ccnumber.vgs-collect-container__focused,
+.ProcessForm #en__field_transaction_ccvv.vgs-collect-container__focused {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+.ProcessForm .en__submit {
+    border-top: 3px solid var(--paletteColor1);
+    margin-top: 25px;
+    padding-top: 25px;
+	text-align: right;
+}
+
+.ProcessForm .en__submit button {
+    display: inline-block;
+    background: var(--paletteColor2);
+    color: var(--paletteColor1);
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+    width: auto;
+    max-width: inherit;
+    padding: 10px 15px;
+    border: 3px solid var(--paletteColor1);
+    height: auto;
+}
+
+.ProcessForm .en__submit button:hover {
+    background: var(--paletteColor1);
+    color: var(--paletteColor2);
+}
+
+.ProcessForm button.en__submit {
+    display: block;
+    background: var(--paletteColor2);
+    color: var(--paletteColor1);
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+    width: auto;
+    max-width: inherit;
+    padding: 10px 15px;
+    border: 3px solid var(--paletteColor1);
+    height: auto;
+}
+
+.ProcessForm button.en__submit:hover {
+    background: var(--paletteColor1);
+    color: var(--paletteColor2);
+}
+
+.ProcessForm .en__captcha {
+    padding: 25px 0px 0px;
+}
+
+/*Error Handling*/
+.ProcessForm .en__field--validationFailed {
+    padding: 10px !important;
+    background-color: #feeaeb !important;
+    border: 1px solid #990000 !important;
+    border-radius: 4px !important;
+}
+
+.ProcessForm .en__field__error {
+    color: #990000;
+    font-size: 1em;
+}
+
+.en__submit button:disabled,
+.en__submit button:disabled:hover,
+.en__submit button:disabled:focus,
+.en__submit button:disabled:focus-within {
+    background-color: #d5d5d5;
+    color: #fff;
+    border-color: #999999;
+    cursor: default;
+}
+
+/*Thank You Page*/
+.transaction-details {
+    width: 100%;
+}
+
+.transaction-details tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.transaction-details td {
+    width: 50%;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px;
+}
+
+body.en__Donation .ProcessForm .en__field__item.other-amt.active {
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+}
+body.en__Donation .ProcessForm .en__field__item.other-amt p {
+    display: none;
+}
+body.en__Donation .ProcessForm .en__field__item.other-amt.active p {
+    display: block;
+}
+
+/* Campaign Form Overrides */
+body.en__Donation.en__Campaign_Form .hero-banner {
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+}
+body.en__Donation.en__Campaign_Form form .ProcessForm {
+    background-color: #ffffff;
+    padding: 0;
+    box-shadow: none;
+}
+body.en__Donation.en__Campaign_Form .ProcessForm .donor-info .en__field input, body.en__Donation.en__Campaign_Form .ProcessForm .donor-info .en__field select {
+    width: 100%;
+    max-width: 100%;
+}
+body.en__Donation.en__Campaign_Form .ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item:not(.en__field__item--other),
+body.en__Donation.en__Campaign_Form .ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
+    min-width: 315px;
+}
+body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__item--other.other-amt-input {
+    width: 100%;
+}
+
+/*Media Queries*/
+@media (max-width: 1400px) {
+    body.en__Donation.en__Campaign_Form .hero-banner {
+        height: 300px;
+    }
+}
+@media (max-width: 1200px) {
+    .main-container {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        background-image: none !important;
+    }
+    main {
+        margin-top: 30px;
+    }	
+	body.en__Donation .en__component--advrow.custom-header .en__component--advcolumn {
+		padding: 15px 20px;
+	}
+	body.en__Donation .en__component--advrow.custom-header img {
+		max-height: 75px;
+	}
+	/* DF Header in Pagebuilder */
+    body.en__Donation main {
+        margin-bottom: 0px;
+    }
+    body.en__Donation form.en__component--page {
+        margin-bottom: 20px;
+    }
+	body.en__Donation.en__OneColumn_Form .en__component--advrow.en__Donation {
+		max-width: 100%;
+		margin: 0 auto 60px;
+	}
+    body.en__Donation.en__Campaign_Form .en__component--advrow.en__Donation {
+        max-width: 100%;
+        margin: 18px auto;
+    }
+	.ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item:not(.en__field__item--other), .ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
+		flex: 1 1 25%;
+		min-width: auto !important;
+	}
+    form.en__component--page .en__component--advrow {
+        display: block;
+    }
+    form .ProcessForm {
+        padding: 0px;
+        box-shadow: none;
+    }
+    .ProcessForm img.df-header-image.show-mobile {
+        display: block;
+    }
+	.ProcessForm .donor-info.tribute-fields {
+        display: block;
+    }
+    .ProcessForm .donor-info .en__field input,
+    .ProcessForm .donor-info .en__field select {
+        max-width: 100%;
+    }
+    .ProcessForm .donor-info .en__field--ccexpire {
+        margin-bottom: 18px;
+    }
+    .en__field--ccvv #en__field_transaction_ccvv {
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    h1 {
+		font-size: 36px;
+		margin-bottom: 16px;
+	}
+	.ProcessForm h2.section-header-container {
+		font-size: 24px;
+		padding: 15px 0 0;
+		margin: 15px 0;
+	}
+	.main-container {
+        width: 100%;
+        max-width: 750px;
+    }
+	.ProcessForm .donor-info .en__field {
+		margin: 8px 0 0;
+	}
+	.ProcessForm .donor-info .en__field--ccexpire {
+		margin-bottom: 8px;
+	}
+	body.en__Donation.en__Campaign_Form .hero-banner {
+        height: 200px;
+    }
+}
+
+@media (max-width: 385px) {
+	.ProcessForm .en__field__label {
+		max-width: 240px;
+	}
+	.ProcessForm h2.section-header-container {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 360px) {
+	.ProcessForm .en__field__label {
+		max-width: 230px;
+	}
+}

@@ -1,0 +1,79 @@
+h1{font-size:var(--dgd-h1);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH1FontWeight);margin:var(--defaultHeadingMargin);}
+h2{font-size:var(--dgd-h2);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH2FontWeight);margin:var(--defaultHeadingMargin);}
+h3{font-size:var(--dgd-h3);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH3FontWeight);margin:var(--defaultHeadingMargin);}
+h4{font-size:var(--dgd-h4);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH4FontWeight);margin:var(--defaultHeadingMargin);}
+h5{font-size:var(--dgd-h5);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH5FontWeight);margin:var(--defaultHeadingMargin);}
+
+/* OVERRIDES */
+p,P,LI,OL,UL,TABLE,TR,TH,TD,.Explicit{font-size:var(--defaultTextSize);line-height:var(--defaultTextLineHeight);color:var(--mainTextColor);font-family:var(--fontFamilyMain);font-weight:normal;margin:var(--defaultParagraphMargin);}
+
+/* ANCHORS */
+a,A:link,div.responsive a:visited,div.responsive a:link,a:focus,A:focus,div.responsive a:focus{color:var(--paletteColor1);font-size:var(--defaultTextSize);text-decoration:underline;font-family:var(--fontFamilyMain);font-weight:normal;}
+a:hover, A:hover, div.responsive a:hover,a:focus,div.responsive a:focus{color:var(--paletteColor1);text-decoration:underline;}
+
+/* FONT UTILITIES */
+TEXTAREA,INPUT,SELECT,OPTION{font-family:inherit;font-size:inherit}
+p.xLarge{color:var(--mainTextColor);font-size:var(--dgd-24px);margin:0 0 32px;}
+p.xSmall{color:var(--mainTextColor);font-size:var(--dgd-12px);margin:0 0 8px;}
+strong, b, strong a{font-family:var(--fontFamilyMain);font-weight:700!important}
+.font-italic{font-style:italic;}
+.font-light{font-weight:300!important}
+.font-regular{font-weight:400!important}
+.font-medium{font-weight:500!important}
+.font-semibold{font-weight:600!important}
+.font-bold{font-weight:700!important}
+.font-boldest{font-weight:900!important}
+.text-transform-none{text-transform:none!important}
+.text-left{text-align:left!important}
+.text-center{text-align:center!important}
+.text-right{text-align:right!important}
+.text-justify{text-align:justify!important}
+.text-uppercase{text-transform:uppercase!important}
+.text-lowercase{text-transform:lowercase!important}
+.text-capitalize{text-transform:capitalize!important}
+.text-underline{text-decoration:underline!important}
+.text-underline-none,a.text-underline-none{text-decoration:none!important}
+.text-line-through{text-decoration:line-through!important}
+.text-italic{font-style:italic!important}
+.text-ellipsis{overflow:hidden!important;white-space:nowrap!important;-o-text-overflow:ellipsis!important;text-overflow:ellipsis!important}
+.text-white{color:var(--white)!important}
+.text-black{color:var(--black)!important}
+.size-25px{font-size:25px!important}
+.size-24px{font-size:24px!important}
+.size-23px{font-size:23px!important}
+.size-22px{font-size:22px!important}
+.size-21px{font-size:21px!important}
+.size-20px{font-size:20px!important}
+.size-19px{font-size:19px!important}
+.size-18px{font-size:18px!important}
+.size-17px{font-size:17px!important}
+.size-16px{font-size:16px!important}
+.size-15px{font-size:15px!important}
+.size-14px{font-size:14px!important}
+.size-13px{font-size:13px!important}
+.size-12px{font-size:12px!important}
+.size-11px{font-size:11px!important}
+.size-10px{font-size:10px!important}
+@media (max-width: 991px) {
+.text-left-mobile{text-align:left!important}
+.text-center-mobile{text-align:center!important}
+.text-right-mobile{text-align:right!important}
+.hide-text-mobile{visibility:hidden}
+.mobile-float-none{float:none;clear:both}
+.size-25px-mobile{font-size:25px!important}
+.size-24px-mobile{font-size:24px!important}
+.size-23px-mobile{font-size:23px!important}
+.size-22px-mobile{font-size:22px!important}
+.size-21px-mobile{font-size:21px!important}
+.size-20px-mobile{font-size:20px!important}
+.size-19px-mobile{font-size:19px!important}
+.size-18px-mobile{font-size:18px!important}
+.size-17px-mobile{font-size:17px!important}
+.size-16px-mobile{font-size:16px!important}
+.size-15px-mobile{font-size:15px!important}
+.size-14px-mobile{font-size:14px!important}
+.size-13px-mobile{font-size:13px!important}
+.size-12px-mobile{font-size:12px!important}
+.size-11px-mobile{font-size:11px!important}
+.size-10px-mobile{font-size:10px!important}
+}

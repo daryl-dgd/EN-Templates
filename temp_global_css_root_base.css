@@ -1,0 +1,131 @@
+:root {
+	/* SET FONT FAMILIES */
+	--fontFamilyMain:'Open Sans',Arial,Helvetica,Sans-serif;
+	--fontFamilySecondary:'Open Sans',Arial,Helvetica,Sans-serif;
+
+	/* SET PALLETTE COLORS (USE PALETTE COLOR OVERRIDES IN THE REUSABLE reus_global_css_utilities TO OVERRIDE COLORS) */
+	--paletteColor1: #000000;
+	--paletteColor2: #ffffff;
+	--paletteColor3: blue;
+	--paletteColor4: red;
+	--paletteColor5: yellow;
+	--paletteColor6: teal;
+	--paletteColor7: cyan;
+	--paletteColor8: orange;
+	--white: #ffffff;
+	--black: #000000;
+	--paletteBlackOpaque: rgba(0,0,0,0.35);
+	--boxShadow: 1px 3px 7px 0px var(--paletteBlackOpaque); 
+	--linkHoverColor: var(--paletteColor1);
+	--mainTextColor: var(--black);
+	
+	/* STANDARD FONT-SIZES (INCLUDES BASE - DEFAULT IS 16px) */
+	--dgd-12px: 1.2rem; /* = 12px */
+	--dgd-14px: 1.4rem; /* = 14px */
+	--dgd-base: 1.6rem; /* = 16px */
+	--dgd-18px: 1.8rem; /* = 18px */
+	--dgd-24px: 2.4rem; /* = 24px */
+	--dgd-28px: 2.8rem; /* = 28px */
+	--dgd-32px: 3.2rem; /* = 32px */
+}
+
+/* FLUID FONT-SIZES INCLUDES FALLBACK FOR  */ 
+/* REFERENCE FOR CLAMP VALUES = clamp(min-value, fluid-value + relative-value, max-value); */
+/* FOR BROWSERS THAT SUPPORT CLAMP  */
+@supports (font-size: clamp(1rem, 1vi, 1rem)) {
+	:root {
+		--dgd-h5: clamp(1.8rem, 3.9vw + 1rem, 2.2rem); /* = min 18px to max 22px */
+		--dgd-h4: clamp(2.4rem, 3.9vw + 1rem, 2.8rem); /* = min 24px to max 28px */
+		--dgd-h3: clamp(2.8rem, 3.9vw + 1rem, 3.6rem); /* = min 28px to max 36px */
+		--dgd-h2: clamp(3.6rem, 3.9vw + 1rem, 4.8rem); /* = min 36px to max 48px */
+		--dgd-h1: clamp(4.8rem, 3.9vw + 1rem, 6rem); /* = min 48px to max 60px */
+	}
+}
+/* FOR BROWSERS THAT DON'T SUPPORT CLAMP */
+@supports not (font-size: clamp(1rem, 1vi, 1rem)) {
+	:root {
+		--dgd-h5: 2.2rem;
+		--dgd-h4: 2.8rem;
+		--dgd-h3: 3.6rem;
+		--dgd-h2: 4.8rem;
+		--dgd-h1: 6rem;
+	}
+	@media screen and (min-width: 767px) {
+		:root {
+			--dgd-h5: 1.8rem;
+			--dgd-h4: 2.4rem;
+			--dgd-h3: 2.8rem;
+			--dgd-h2: 3.6rem;
+			--dgd-h1: 4.8rem;
+		}
+	}
+}
+
+:root {
+	/* SETTING DEFAULTS FOR FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT */
+	--defaultTextSize: var(--dgd-base);
+	--defaultTextLineHeight: calc(2ex + 7px); /* Relative unit (ex) = Relates to current font's x-height. x-height is equal to lower case character 'x' height. */
+	--defaultParagraphMargin: 0px 0px 24px 0px;
+	--defaultHeadingMargin: 0px 0px 24px 0px;
+	--defaultH1FontWeight: 700;
+	--defaultH2FontWeight: 700;
+	--defaultH3FontWeight: 700;
+	--defaultH4FontWeight: 700;
+	--defaultH5FontWeight: 700;
+
+	/* FORM FIELDS */
+	--formFieldFontSize: var(--dgd-base);
+	--formFieldBorderColor: var(--black);
+	--formFieldBorderRadius: 0px;
+	--formFieldBorderWidth: 0;
+	--formFieldBoxShadow: var(--boxShadow);
+	--formFieldHeight: 40px;
+	--formFieldPadding: 7px;
+	--formFieldLineHeight: 1;
+        --selectArrowSVG: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>') no-repeat;
+
+	/* LABELS */
+	--formLabelFontSize: var(--dgd-base);
+	--formLabelFontWeight: normal;
+
+	/* BUTTONS */
+	--buttonborderWidth: 3px;
+	--buttonBorderRadius: 0px;
+	--buttonFontSize: var(--dgd-base);
+	--buttonFontWeight: 700;
+	--buttonLineHeight: 1;
+	--buttonPadding: 12px;
+	--buttonTextTransform: uppercase;
+	--buttonLetterSpacing: 0;
+	--buttonMinWidth: 150px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  BASE
+/*-----------------------------------------------------------------------------------*/
+*, *:after, *:before {-webkit-box-sizing: border-box;box-sizing: border-box;}
+img,legend{border:0}legend,td,th{padding:0}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary,div{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{}abbr[title]{border-bottom:1px dotted}dfn{font-style:italic}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:none;margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}
+
+/* OVERRIDES */
+*, html, body, form, input, input.AddressBookButtons, input.Advocacy, input.btn, input.btnLg, input.btnMed, input.btnMini, input.btnSm, select, select.Advocacy, textarea, legend, ul, ol, li, option, table, tr, th, th.rfl_infoStatus, td, td.AlertListDescription, td.cstmBack, p, p.cstmBtnText, p.cstmFrame, p.cstmHeading, p.cstmText, p.cstmTitle, p.dividerHeading, p.scrollingText, span.cstmHeading, a, a.btn, a.btn:visited, a.cstmBtnText:hover, a.cstmBtnText:link, a.cstmBtnText:visited, #navList, .AdvocacyInstructions, .AdvocacyNSFix, .BlogHeader, .Button, .Divider, .FieldLabels, .FormBox, .FormBox06, .FormBoxHeader, .Hint, .Instructions, .Instructions, .ListItem0, .ListItem1, .NetscapeFix, .NoteText, .ObjTitle, .PhotoLinks, .Premiums, .ProgressBox, .ProgressBoxCurrent, .SectionHead, .SmallButton, .Smaller, .SmallerC, .TribBtnText1, .Upgrades, .WhatNext, .alphacube_content, .dialog_content, .dialog_title, .Explicit, .fr_register_another, .paraBlueSansSmall, .smallBlack, .smallSans, .smallSansBold, .smallWhiteBoldSans, .smallWhiteSans, .smallestBlackSans {
+    font-family:var(--fontFamilyMain);
+}
+/* SETTING DEFAULT FONT SIZE TO 62.5%, WHICH IS 10px */
+html {
+    font-size: 62.5%;
+	font-family: var(--fontFamilyMain);
+    line-height: var(--defaultTextLineHeight);
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior:smooth
+}
+body {
+    background-color: var(--white);
+    min-height: 100vh;
+    font-family: var(--fontFamilyMain);
+	font-size: var(--defaultTextSize);
+	font-weight: var(----defaultTextWeight);
+	line-height: var(--defaultTextLineHeight);
+	color: var(--mainTextColor);
+}
+body.noScroll{overflow:hidden;padding-right:17px}
+html.ios-browser body.noScrollDevice,html.android-browser body.noScrollDevice{overflow:hidden;position:fixed;}
