@@ -8,12 +8,15 @@ body {
     margin: 0px;
     padding: 0px;
     font-size: 10pt;
-    /* background-image: url('https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2421/trees_BG.jpg?v=1720539554000'); */
     background: var(--white);
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+body.en__Donation.en__MultiStep_Form {
+    background: linear-gradient(180deg, var(--paletteColor5), var(--paletteColor4));
 }
 
 .en__hidden {
@@ -41,6 +44,13 @@ body.en__Donation .en__component--advrow.en__Donation {
     max-width: 1300px;
     margin: 60px auto;
     padding: 0px 20px;
+}
+body.en__Donation.en__MultiStep_Form .en__component--advrow.en__Donation {
+    max-width: 100%;
+    margin: 0px;
+    padding: 64px;
+    justify-content: space-between;
+    gap: 95px;
 }
 body.en__Donation .en__component--advrow.custom-header {
     background-color: var(--white);
@@ -74,6 +84,9 @@ body.en__Donation .en__component--advrow.custom-header .en__component--advcolumn
 form.en__component--page {
     margin: 0px auto 60px;
     padding-top: 20px;
+}
+body.en__Donation.en__MultiStep__Form form.en__component--page {
+    margin: 0px;
 }
 
 form .ProcessForm {
@@ -559,6 +572,9 @@ form .ProcessForm {
 }
 .footer-inner {
     padding: 32px 64px;
+}
+.footer-top p {
+    margin: 0px;
 }
 .footer-inner .footer-details p:last-child {
     margin-bottom: 0px;

@@ -28,6 +28,9 @@ $(document).ready(function($) {
 			$banner.remove();
 		}
     }
+    if($('.en__MultiStep_Form').length > 0){
+        $('body').addClass("en__MultiStep_Form");
+    }
     if($('.en__Campaign_Form').length > 0){
         $('body').addClass("en__Campaign_Form");
 		// get hero banner img src
