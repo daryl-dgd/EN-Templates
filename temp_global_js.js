@@ -41,6 +41,8 @@ $(document).ready(function($) {
     if($('.en__Static').length > 0){
         $('body').addClass("en__Static");
     }
+
+    $('.footer-inner .footer-details').wrapAll('<div class="frow-container" />');
 	
 	if($('.page-1').length > 0){
         //Donation form page, run appropriate JS

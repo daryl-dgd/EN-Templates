@@ -551,6 +551,29 @@ form .ProcessForm {
     padding: 25px 0px 0px;
 }
 
+/* Footer */
+.footer {
+    background-color: var(--white);
+}
+.footer-top {
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+.footer-inner {
+    padding-bottom: 40px;
+}
+.footer p {
+    margin: 0px;
+}
+.footer-bottom {
+    background-color: var(--paletteColor3);
+    padding: 20px 0px;
+}
+.footer-inner > .frow-container {
+    display: flex;
+    flex-direction: row;
+}
+
 /*Error Handling*/
 .ProcessForm .en__field--validationFailed {
     padding: 10px !important;
@@ -718,6 +741,22 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
 	}
 	body.en__Donation.en__Campaign_Form .hero-banner {
         height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-top {
+        padding: 20px 0px;
+    }
+    .footer-inner .frow-container {
+        flex-direction: column;
+        gap: 20px
+    }
+    .footer-inner .footer-details p {
+        text-align: left !important;
+    }
+    .footer-inner {
+        padding-bottom: 20px;
     }
 }
 
