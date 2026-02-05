@@ -42,7 +42,7 @@ $(document).ready(function($) {
         $('body').addClass("en__Static");
     }
 
-    $('.footer-inner .footer-details').wrapAll('<div class="frow-container" />');
+    /*$('.footer-inner .footer-details').wrapAll('<div class="frow-container" />');*/
 	
 	if($('.page-1').length > 0){
         //Donation form page, run appropriate JS

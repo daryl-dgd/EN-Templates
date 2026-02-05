@@ -1,12 +1,12 @@
 :root {
 	/* SET FONT FAMILIES */
-	--fontFamilyMain:'Open Sans',Arial,Helvetica,Sans-serif;
-	--fontFamilySecondary:'Open Sans',Arial,Helvetica,Sans-serif;
+	--fontFamilyMain: Arial, Helvetica, sans-serif;
+	--fontFamilySecondary: SofiaPro, sans-serif;
 
 	/* SET PALLETTE COLORS (USE PALETTE COLOR OVERRIDES IN THE REUSABLE reus_global_css_utilities TO OVERRIDE COLORS) */
-	--paletteColor1: #000000;
-	--paletteColor2: #ffffff;
-	--paletteColor3: blue;
+	--paletteColor1: #fe6800;
+	--paletteColor2: #838891;
+	--paletteColor3: #f7f9fb;
 	--paletteColor4: red;
 	--paletteColor5: yellow;
 	--paletteColor6: teal;
