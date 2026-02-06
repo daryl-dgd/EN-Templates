@@ -45,7 +45,37 @@ $(document).ready(function($) {
         $('body').addClass("en__Static");
     }
 
-    /*$('.footer-inner .footer-details').wrapAll('<div class="frow-container" />');*/
+    document.addEventListener("DOMContentLoaded", function() {
+        // Look for the configuration element
+        const configEl = document.querySelector('.en-bg-config');
+
+        if (configEl) {
+            const body = document.body;
+            const type = configEl.getAttribute('data-type'); // 'solid' or 'gradient'
+            
+            // Activate the CSS override class
+            body.classList.add('custom-bg-active');
+
+            if (type === 'solid') {
+                // Apply solid color
+                const color = configEl.getAttribute('data-color');
+                if (color) {
+                    body.style.setProperty('--custom-bg-color', color);
+                }
+            } 
+            else if (type === 'gradient') {
+                // Apply gradient
+                const start = configEl.getAttribute('data-start');
+                const end = configEl.getAttribute('data-end');
+                const direction = configEl.getAttribute('data-direction') || 'to bottom';
+                
+                if (start && end) {
+                    const gradientString = `linear-gradient(${direction}, ${start}, ${end})`;
+                    body.style.setProperty('--custom-bg-image', gradientString);
+                }
+            }
+        }
+    });
 	
 	if($('.page-1').length > 0){
         //Donation form page, run appropriate JS
