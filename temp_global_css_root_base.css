@@ -1,7 +1,7 @@
 :root {
 	/* SET FONT FAMILIES */
 	--fontFamilyMain: Arial, Helvetica, sans-serif;
-	--fontFamilySecondary: SofiaPro, sans-serif;
+	--fontFamilySecondary: Poppins, Arial, sans-serif;
 
 	/* SET PALLETTE COLORS (USE PALETTE COLOR OVERRIDES IN THE REUSABLE reus_global_css_utilities TO OVERRIDE COLORS) */
 	--paletteColor1: #fe6800;
@@ -65,8 +65,8 @@
 	/* SETTING DEFAULTS FOR FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT */
 	--defaultTextSize: var(--dgd-base);
 	--defaultTextLineHeight: calc(2ex + 7px); /* Relative unit (ex) = Relates to current font's x-height. x-height is equal to lower case character 'x' height. */
-	--defaultParagraphMargin: 0px 0px 24px 0px;
-	--defaultHeadingMargin: 0px 0px 24px 0px;
+	--defaultParagraphMargin: 0px 0px 16px;
+	--defaultHeadingMargin: 0px 0px 16px;
 	--defaultH1FontWeight: 700;
 	--defaultH2FontWeight: 700;
 	--defaultH3FontWeight: 700;

@@ -15,10 +15,6 @@ body {
     background-attachment: fixed;
 }
 
-
-/*body.en__Donation.en__MultiStep_Form {
-    background: linear-gradient(180deg, var(--paletteColor5), var(--paletteColor4));
-}*/
 body.custom-bg-active {
     background-color: var(--custom-bg-color, #ffffff);
     background-image: var(--custom-bg-image, none);
@@ -640,6 +636,22 @@ body.en__Donation .ProcessForm .en__field__item.other-amt p {
     display: none;
 }
 body.en__Donation .ProcessForm .en__field__item.other-amt.active p {
+    display: block;
+}
+
+/* Multi-Step CSS */
+body.en__Donation.en__MultiStep_Form .ProcessFormIntro {
+    max-width: 600px;
+}
+body.en__Donation.en__MultiStep_Form .ProcessFormIntro h1 {
+    color: var(--white);
+}
+body.en__Donation.en__MultiStep_Form .ProcessFormIntro p {
+    color: var(--white);
+    font-size: 20px;
+    line-height: 150%;
+}
+body.en__Donation.en__MultiStep_Form .ProcessFormIntro .ctaImage {
     display: block;
 }
 

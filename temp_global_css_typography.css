@@ -1,8 +1,8 @@
-h1{font-size:var(--dgd-h1);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH1FontWeight);margin:var(--defaultHeadingMargin);}
-h2{font-size:var(--dgd-h2);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH2FontWeight);margin:var(--defaultHeadingMargin);}
-h3{font-size:var(--dgd-h3);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH3FontWeight);margin:var(--defaultHeadingMargin);}
-h4{font-size:var(--dgd-h4);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH4FontWeight);margin:var(--defaultHeadingMargin);}
-h5{font-size:var(--dgd-h5);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilyMain);font-weight:var(--defaultH5FontWeight);margin:var(--defaultHeadingMargin);}
+h1{font-size:var(--dgd-h1);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilySecondary);font-weight:var(--defaultH1FontWeight);margin:var(--defaultHeadingMargin);}
+h2{font-size:var(--dgd-h2);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilySecondary);font-weight:var(--defaultH2FontWeight);margin:var(--defaultHeadingMargin);}
+h3{font-size:var(--dgd-h3);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilySecondary);font-weight:var(--defaultH3FontWeight);margin:var(--defaultHeadingMargin);}
+h4{font-size:var(--dgd-h4);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilySecondary);font-weight:var(--defaultH4FontWeight);margin:var(--defaultHeadingMargin);}
+h5{font-size:var(--dgd-h5);line-height:var(--defaultTextLineHeight);color:var(--paletteColor1);font-family:var(--fontFamilySecondary);font-weight:var(--defaultH5FontWeight);margin:var(--defaultHeadingMargin);}
 
 /* OVERRIDES */
 p,P,LI,OL,UL,TABLE,TR,TH,TD,.Explicit{font-size:var(--defaultTextSize);line-height:var(--defaultTextLineHeight);color:var(--mainTextColor);font-family:var(--fontFamilyMain);font-weight:normal;margin:var(--defaultParagraphMargin);}
