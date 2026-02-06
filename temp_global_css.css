@@ -522,19 +522,20 @@ form .ProcessForm {
 }
 
 .ProcessForm .en__submit button {
-    display: inline-block;
-    background: var(--paletteColor2);
-    color: var(--paletteColor1);
+    display: block;
+    background: var(--paletteColor1);
+    color: var(--black);
     text-align: center;
     cursor: pointer;
     font-size: 16px;
     line-height: 21px;
-    font-weight: 600;
-    width: auto;
-    max-width: inherit;
-    padding: 10px 15px;
-    border: 3px solid var(--paletteColor1);
+    font-weight: 700;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    border: 1px solid var(--paletteColor1);
     height: auto;
+    font-family: var(--fontFamilyButton);
 }
 
 .ProcessForm .en__submit button:hover {
@@ -660,6 +661,12 @@ body.en__Donation.en__MultiStep_Form .ProcessFormIntro .ctaImage {
 body.en__Donation.en__MultiStep_Form .ProcessForm {
     padding: 60px;
     box-shadow: none;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit {
+    border: none;
+    margin: 0px 0px 16px;
+    padding: 0px;
+	text-align: unset;
 }
 
 /* Campaign Form Overrides */
