@@ -44,38 +44,6 @@ $(document).ready(function($) {
     if($('.en__Static').length > 0){
         $('body').addClass("en__Static");
     }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        // Look for the configuration element
-        const configEl = document.querySelector('.en-bg-config');
-
-        if (configEl) {
-            const body = document.body;
-            const type = configEl.getAttribute('data-type'); // 'solid' or 'gradient'
-            
-            // Activate the CSS override class
-            body.classList.add('custom-bg-active');
-
-            if (type === 'solid') {
-                // Apply solid color
-                const color = configEl.getAttribute('data-color');
-                if (color) {
-                    body.style.setProperty('--custom-bg-color', color);
-                }
-            } 
-            else if (type === 'gradient') {
-                // Apply gradient
-                const start = configEl.getAttribute('data-start');
-                const end = configEl.getAttribute('data-end');
-                const direction = configEl.getAttribute('data-direction') || 'to bottom';
-                
-                if (start && end) {
-                    const gradientString = `linear-gradient(${direction}, ${start}, ${end})`;
-                    body.style.setProperty('--custom-bg-image', gradientString);
-                }
-            }
-        }
-    });
 	
 	if($('.page-1').length > 0){
         //Donation form page, run appropriate JS
@@ -288,6 +256,50 @@ $(document).ready(function($) {
         }
     }
 });
+
+(function() {
+    function setCustomBackground() {
+        console.log("Custom Background Script: Running...");
+        
+        // 1. Try to find the element
+        const configEl = document.querySelector('.en-bg-config');
+        
+        if (!configEl) {
+            console.log("Custom Background Script: No config element found.");
+            return;
+        }
+
+        console.log("Custom Background Script: Element found!", configEl);
+
+        const body = document.body;
+        const type = configEl.getAttribute('data-type');
+        
+        // 2. Add class and styles
+        body.classList.add('custom-bg-active');
+
+        if (type === 'solid') {
+            const color = configEl.getAttribute('data-color');
+            if (color) body.style.setProperty('--custom-bg-color', color);
+        } 
+        else if (type === 'gradient') {
+            const start = configEl.getAttribute('data-start');
+            const end = configEl.getAttribute('data-end');
+            const direction = configEl.getAttribute('data-direction') || 'to bottom';
+            
+            if (start && end) {
+                const gradientString = `linear-gradient(${direction}, ${start}, ${end})`;
+                body.style.setProperty('--custom-bg-image', gradientString);
+            }
+        }
+    }
+
+    // 3. Robust Execution: Run immediately if loaded, otherwise wait
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setCustomBackground);
+    } else {
+        setCustomBackground();
+    }
+})();
 
 //Error Handling
 window.enOnValidate = function(){
