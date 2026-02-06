@@ -73,13 +73,15 @@ body.en__Donation .en__component--advrow.custom-header .en__component--advcolumn
 }
 #en__pagebuilder .ProcessForm .en__field--donationAmt .en__field__input--radio + .en__field__label--item,
 #en__pagebuilder .ProcessForm .en__field--recurrpay .en__field__input--radio + .en__field__label--item {
-    background-color: var(--paletteColor5);
+    background-color: var(--white);
     color: var(--black);
+    border: 1px solid var(--paletteColor6);
 }
 #en__pagebuilder .ProcessForm .en__field--donationAmt .en__field__input--radio:checked + .en__field__label--item,
 #en__pagebuilder .ProcessForm .en__field--recurrpay .en__field__input--radio:checked + .en__field__label--item {
     background-color: var(--paletteColor1);
-    color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--paletteColor1);
 }
 
 form.en__component--page {
@@ -166,18 +168,19 @@ form .ProcessForm {
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__label--item,
 .ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__label--item {
     display: block;
-    background: var(--paletteColor2);
-    color: var(--paletteColor1);
+    background: var(--white);
+    color: var(--black);
     text-align: center;
     cursor: pointer;
     font-size: 16px;
     line-height: 21px;
-    font-weight: 600;
+    font-weight: 700;
     width: 100%;
     max-width: 100%;
-    padding: 10px 15px;
-    border: 3px solid var(--paletteColor1);
+    padding: 12px;
+    border: 1px solid var(--paletteColor6);
     height: auto;
+    font-family: var(--fontFamilyButton);
 }
 
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item.active .en__field__label--item,
@@ -185,7 +188,7 @@ form .ProcessForm {
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item .en__field__label--item:hover,
 .ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item .en__field__label--item:hover {
     background: var(--paletteColor1);
-    color: var(--paletteColor2);
+    border: 1px solid var(--paletteColor1);
 }
 
 .ProcessForm .en__field--donationAmt .en__field__element--radio .focus .en__field__label--item,
@@ -653,6 +656,10 @@ body.en__Donation.en__MultiStep_Form .ProcessFormIntro p {
 }
 body.en__Donation.en__MultiStep_Form .ProcessFormIntro .ctaImage {
     display: block;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm {
+    padding: 60px;
+    box-shadow: none;
 }
 
 /* Campaign Form Overrides */
