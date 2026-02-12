@@ -229,18 +229,19 @@ form .ProcessForm {
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__input--other {
     display: block;
     background: var(--paletteColor1);
-    color: var(--paletteColor2);
+    color: var(--black);
     text-align: center;
     cursor: pointer;
     font-size: 16px;
     line-height: 21px;
-    font-weight: 600;
+    font-weight: 700;
     width: 100%;
     max-width: 100%;
-    padding: 10px 15px;
-    border: 3px solid var(--paletteColor1);
+    padding: 12px;
+    border: 1px solid var(--paletteColor1);
     height: auto;
     margin: 0px;
+    font-family: var(--fontFamilyButton);
 }
 
 /* Dollar sign fix */
@@ -249,8 +250,11 @@ form .ProcessForm {
 }
 .ProcessForm .en__field--donationAmt .other-amt-input:before {
 	content: "$";
-	color: #fff;
+    font-family: var(--fontFamilyButton);
+	color: var(--black);
 	font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
 	position: absolute;
 	left: 12px;
 	top: 50%;
@@ -258,7 +262,7 @@ form .ProcessForm {
 	pointer-events: none;
 }
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__input--other {
-	padding-left: 20px;
+	padding-left: 24px;
 	text-align: left;
 }
 
@@ -310,33 +314,39 @@ form .ProcessForm {
 }
 
 .ProcessForm select {
-    border: 1px solid var(--paletteColor1);
     border-radius: 0;
     box-shadow: none;
     background: var(--paletteColor2);
     font-size: 1.6rem;
-    padding: 7px 30px 7px 7px;
     min-height: 40px;
     width: 100%;
     max-width: 100%;
     appearance: none;
     background: var(--selectArrowSVG) calc(100% - 8px);
+
+    border: 1px solid var(--black);
+    padding: 12px 30px 12px 12px;
+    font-family: var(--fontFamilyButton);
+    color: var(--black);
 }
 
 .ProcessForm input[type="text"] {
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
     appearance: textfield;
-    background: var(--paletteColor2);
-    border: 1px solid var(--paletteColor1);
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
     box-shadow: none;
     font-size: 1.6rem;
     min-height: 40px;
-    padding: 7px;
     width: 100%;
+
+    background: var(--white);
+    border: 1px solid var(--black);
+    padding: 12px;
+    font-family: var(--fontFamilyButton);
+    color: var(--black);
 }
 
 .ProcessForm input[type="radio"] {
@@ -459,8 +469,10 @@ form .ProcessForm {
 .ProcessForm label {
     white-space: normal;
     margin-bottom: 0px;
-    font-weight: 700;
-    font-size: 14px;
+    padding: 0px 0px 8px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--fontFamilyButton);
     line-height: 1.5;
 }
 
@@ -569,11 +581,28 @@ form .ProcessForm {
     font-family: var(--fontFamilyButton);
 }
 
+.ProcessForm .en__submit button:before,
+.ProcessForm button.en__submit:before {
+    content: "\f061";
+    color: var(--paletteColor1);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
 .ProcessForm .en__submit button:hover,
 .ProcessForm button.en__submit:hover  {
     background: var(--white);
-    border-color: 1px solid var(--paletteColor1);
+    border: 1px solid var(--paletteColor1);
     color: var(--black);
+}
+.ProcessForm .en__submit button:hover:before,
+.ProcessForm button.en__submit:hover:before {
+    color: var(--paletteColor1);
+    opacity: 1;
 }
 
 .ProcessForm .en__captcha {
@@ -664,6 +693,7 @@ body.en__Donation.en__MultiStep_Form .en__component--advrow.en__Donation {
     margin: 0px;
     padding: 64px;
     justify-content: space-between;
+    align-items: flex-start;
     gap: clamp(30px, 6vw, 95px);
 }
 /*body.en__Donation.en__MultiStep_Form .ProcessFormIntro {
