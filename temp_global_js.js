@@ -57,7 +57,7 @@ $(document).ready(function($) {
 			}, delay || 100);
 		}
 		
-		$('input[value="Other"]').parent().addClass("other-amt");
+		/*$('input[value="Other"]').parent().addClass("other-amt");
 
         $('input[name="transaction.donationAmt.other"]').parent().addClass("other-amt-input");
 
@@ -105,8 +105,6 @@ $(document).ready(function($) {
             $('input[name="transaction.recurrpay"]').parent().removeClass("active");
             $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
 
-            console.log("switching Other logic...");
-
             setTimeout(function(){
                 //$('input[value="Other"]').parent().addClass("other-amt");
                 $('input[name="transaction.donationAmt"]:checked').click();
@@ -115,7 +113,7 @@ $(document).ready(function($) {
                 $('input[name="transaction.donationAmt.other"]').parent().addClass("other-amt-input");
                 $('.other-amt-input').appendTo('.other-amt');
             },200);
-        });
+        });*/
 
         //Update total amount when other is updated
         $(document).on('input keyup blur change', '.en__field__input--other', function () {
