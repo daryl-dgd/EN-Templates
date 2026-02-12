@@ -60,8 +60,6 @@ $(document).ready(function($) {
 		$('input[value="Other"]').parent().addClass("other-amt");
 
         $('input[name="transaction.donationAmt.other"]').parent().addClass("other-amt-input");
-
-        //$('.other-amt-input').appendTo('.other-amt');
 		
 		//Add a minimum donation note
 		$('<p style="font-size: 12px; margin-bottom: 0px; position: absolute; bottom: -15px; left: 0;">Minimum donation of $5.00</p>').appendTo('.other-amt-input');
@@ -106,10 +104,8 @@ $(document).ready(function($) {
             $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
 
             setTimeout(function(){
-                //$('input[value="Other"]').parent().addClass("other-amt");
-                $('input[name="transaction.donationAmt"]:checked').click();
-
                 $('input[value="Other"]').parent().addClass("other-amt");
+                $('input[name="transaction.donationAmt"]:checked').click();
             },200);
         });
 
