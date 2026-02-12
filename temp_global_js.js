@@ -74,7 +74,7 @@ $(document).ready(function($) {
         //Manage classes of inputs based on what is selected
         $('input[name="transaction.donationAmt"]:checked').parent().addClass("active");
 
-        $('input[name="transaction.donationAmt"]').click(function() {
+        $(document).on('click', 'input[name="transaction.donationAmt"]', function() {
             $('input[name="transaction.donationAmt"]').parent().removeClass("active");
             $('input[name="transaction.donationAmt"]:checked').parent().addClass("active");
             
@@ -116,6 +116,7 @@ $(document).ready(function($) {
             $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
 
             $('input[value="Other"]').parent().addClass("other-amt");
+            $('input[name="transaction.donationAmt"]:checked').click();
 
             /*if ($(this).val() != "Y") {
                 if ($('.en__field--donationAmt').hasClass("monthly-selected")) {
