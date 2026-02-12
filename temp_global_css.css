@@ -313,7 +313,8 @@ form .ProcessForm {
     width: 100%;
 }
 
-.ProcessForm select {
+.ProcessForm select,
+.ProcessForm .donor-info .en__field select {
     border-radius: 0;
     box-shadow: none;
     background: var(--paletteColor2);
@@ -330,7 +331,8 @@ form .ProcessForm {
     color: var(--black);
 }
 
-.ProcessForm input[type="text"] {
+.ProcessForm input[type="text"],
+.ProcessForm .donor-info .en__field input[type="text"] {
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
     appearance: textfield;
@@ -424,7 +426,7 @@ form .ProcessForm {
     min-width: auto;
 }
 
-.ProcessForm .donor-info .en__field input[type="text"] {
+/*.ProcessForm .donor-info .en__field input[type="text"] {
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
     appearance: textfield;
@@ -452,7 +454,7 @@ form .ProcessForm {
     max-width: 100%;
     appearance: none;
     background: var(--selectArrowSVG) calc(100% - 8px);
-}
+}*/
 
 .ProcessForm .donor-info .en__field__item {
     padding: 0px;

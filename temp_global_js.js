@@ -182,14 +182,17 @@ $(document).ready(function($) {
         //Wrap elements in donor-info div
         $('.en__field--title').wrap($('<div class="donor-info"/>'));
         $('.en__field--firstName, .en__field--lastName').wrapAll($('<div class="donor-info"/>'));
-        $('.en__field--infname').wrapAll($('<div class="donor-info tribute-fields"/>'));
+        //$('.en__field--infname').wrapAll($('<div class="donor-info tribute-fields"/>'));
         $('.en__field--address1, .en__field--address2').wrapAll($('<div class="donor-info"/>'));
-        $('.en__field--infadd1, .en__field--infadd2').wrapAll($('<div class="donor-info tribute-fields"/>'));
+        //$('.en__field--infadd1, .en__field--infadd2').wrapAll($('<div class="donor-info tribute-fields"/>'));
         $('.en__field--city, .en__field--region').wrapAll($('<div class="donor-info"/>'));
-        $('.en__field--infcity, .en__field--infreg').wrapAll($('<div class="donor-info tribute-fields"/>'));
+        //$('.en__field--infcity, .en__field--infreg').wrapAll($('<div class="donor-info tribute-fields"/>'));
         $('.en__field--postcode, .en__field--country').wrapAll($('<div class="donor-info"/>'));
         $('.en__field--emailAddress, .en__field--phoneNumber').wrapAll($('<div class="donor-info"/>'));
         $('.en__field--ccexpire, .en__field--ccvv').wrapAll($('<div class="donor-info"/>'));
+
+        $('.en__field--infcountry, .en__field--infreg').wrapAll($('<div class="donor-info tribute-fields"/>'));
+        $('.en__field--infcity, .en__field--infpostcd').wrapAll($('<div class="donor-info tribute-fields"/>'));
 
         //Add blank options to beginning of dropdowns
         var blankTitle = $('<option></option>').attr('value', '').text('');
