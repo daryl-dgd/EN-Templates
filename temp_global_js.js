@@ -106,7 +106,7 @@ $(document).ready(function($) {
             setTimeout(function(){
                 $('input[value="Other"]').parent().addClass("other-amt");
                 $('input[name="transaction.donationAmt"]:checked').click();
-            },200);
+            },50);
         });
 
         //Update total amount when other is updated
