@@ -6,7 +6,7 @@ $(document).ready(function($) {
     var $headerLogo = $('.custom-header img.headerLogo').first();
 
     if ($headerLogo.length) {
-        $headerLogo.wrapAll($('<a href="#" target="_blank" />'));
+        $headerLogo.wrapAll($('<a href="https://www.accion.org/" target="_blank" />'));
     }
 
     //Add body classes
@@ -101,13 +101,13 @@ $(document).ready(function($) {
         
         $('input[name="transaction.donationAmt"]:checked').click();
 
-        if ($('input[name="transaction.recurrpay"]:checked').val() == "N") {
+        if ($('input[name="transaction.recurrpay"]:checked').val() != "Y") {
             $('.en__field--donationAmt').addClass("one-time-selected");
-            $('.monthlyToggle').hide();
+            //$('.monthlyToggle').hide();
         }
         else {
             $('.en__field--donationAmt').addClass("monthly-selected");
-            $('.monthlyToggle').show();
+            //$('.monthlyToggle').show();
         }
 
         //Checking for One-Time or Monthly option and select first available donation amount unless Other is already selected
@@ -115,29 +115,29 @@ $(document).ready(function($) {
             $('input[name="transaction.recurrpay"]').parent().removeClass("active");
             $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
 
-            if ($(this).val() == "N") {
-                if ($('.en__field--donationAmt').hasClass("monthly-selected")) {
+            if ($(this).val() != "Y") {
+                /*if ($('.en__field--donationAmt').hasClass("monthly-selected")) {
                     if (!$('.other-amt').hasClass('active')) {
                         $('#en__field_transaction_donationAmt2').click();
                     }
-                }
+                }*/
 
                 $('.en__field--donationAmt').removeClass("monthly-selected");
                 $('.en__field--donationAmt').addClass("one-time-selected");
                 
-                $('.monthlyToggle').hide();
+                //$('.monthlyToggle').hide();
             }
             else {
-                if ($('.en__field--donationAmt').hasClass("one-time-selected")) {
+                /*if ($('.en__field--donationAmt').hasClass("one-time-selected")) {
                     if (!$('.other-amt').hasClass('active')) {
                         $('#en__field_transaction_donationAmt6').click();
                     }
-                }
+                }*/
 
                 $('.en__field--donationAmt').removeClass("one-time-selected");
                 $('.en__field--donationAmt').addClass("monthly-selected");
                 
-                $('.monthlyToggle').show();
+                //$('.monthlyToggle').show();
             }
         });
 
@@ -152,7 +152,7 @@ $(document).ready(function($) {
 		});
 
         //Build array of donation levels and split them between One-Time and Monthly options
-        $('.en__field--donationAmt label').each(function() {
+        /*$('.en__field--donationAmt label').each(function() {
             if ($(this).text().trim() === "Onetime") {
                 $(this).text("$" + $(this).prev('.en__field__input').val());
                 $(this).parent().addClass("don-level one-time");
@@ -160,7 +160,7 @@ $(document).ready(function($) {
                 $(this).text("$" + $(this).prev('.en__field__input').val());
                 $(this).parent().addClass("don-level monthly");
             }
-        });
+        });*/
 
         //Accessibility on giving levels - focus state
         $(".en__field--donationAmt input").on('focus', function(){
