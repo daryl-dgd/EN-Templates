@@ -101,47 +101,16 @@ $(document).ready(function($) {
         
         $('input[name="transaction.donationAmt"]:checked').click();
 
-        /*if ($('input[name="transaction.recurrpay"]:checked').val() != "Y") {
-            $('.en__field--donationAmt').addClass("one-time-selected");
-            //$('.monthlyToggle').hide();
-        }
-        else {
-            $('.en__field--donationAmt').addClass("monthly-selected");
-            //$('.monthlyToggle').show();
-        }*/
-
-        //Checking for One-Time or Monthly option and select first available donation amount unless Other is already selected
         $('input[name="transaction.recurrpay"]').click(function() {
-            $('input[name="transaction.recurrpay"]').parent().removeClass("active");
-            $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
+            //$('input[name="transaction.recurrpay"]').parent().removeClass("active");
+            console.log("new frequency click function");
+            
+            setTimeout(function(){
+                $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
 
-            $('input[value="Other"]').parent().addClass("other-amt");
-            $('input[name="transaction.donationAmt"]:checked').click();
-
-            /*if ($(this).val() != "Y") {
-                if ($('.en__field--donationAmt').hasClass("monthly-selected")) {
-                    if (!$('.other-amt').hasClass('active')) {
-                        $('#en__field_transaction_donationAmt2').click();
-                    }
-                }
-
-                $('.en__field--donationAmt').removeClass("monthly-selected");
-                $('.en__field--donationAmt').addClass("one-time-selected");
-                
-                //$('.monthlyToggle').hide();
-            }
-            else {
-                if ($('.en__field--donationAmt').hasClass("one-time-selected")) {
-                    if (!$('.other-amt').hasClass('active')) {
-                        $('#en__field_transaction_donationAmt6').click();
-                    }
-                }
-
-                $('.en__field--donationAmt').removeClass("one-time-selected");
-                $('.en__field--donationAmt').addClass("monthly-selected");
-                
-                //$('.monthlyToggle').show();
-            }*/
+                $('input[value="Other"]').parent().addClass("other-amt");
+                $('input[name="transaction.donationAmt"]:checked').click();
+            },500);
         });
 
         //Update total amount when other is updated
