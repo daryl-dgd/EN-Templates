@@ -57,14 +57,14 @@ $(document).ready(function($) {
 			}, delay || 100);
 		}
 		
-		/*$('input[value="Other"]').parent().addClass("other-amt");
+		$('input[value="Other"]').parent().addClass("other-amt");
 
         $('input[name="transaction.donationAmt.other"]').parent().addClass("other-amt-input");
 
-        $('.other-amt-input').appendTo('.other-amt');
+        //$('.other-amt-input').appendTo('.other-amt');
 		
 		//Add a minimum donation note
-		$('<p style="font-size:12px;margin-bottom:0px;position:absolute;bottom:-15px;left:0;">Minimum donation of $5.00</p>').appendTo('.en__field__item.other-amt');
+		$('<p style="font-size: 12px; margin-bottom: 0px; position: absolute; bottom: -20px; left: 0;">Minimum donation of $5.00</p>').appendTo('.other-amt-input');
 
         $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
         
@@ -81,7 +81,7 @@ $(document).ready(function($) {
             console.log("clicked amount - " + $(this).val());
 
             if ($(this).val() == "Other") {
-                $('.other-amt label').hide();
+                $('.other-amt').hide();
 
                 setTimeout(function(){
                     $('.en__field__input--other').click();
@@ -89,7 +89,7 @@ $(document).ready(function($) {
                 },100);
             }
             else {
-                $('.other-amt label').show();
+                $('.other-amt').show();
                 
                 setTimeout(function(){
 					var latestTotal = getTotalAmountText();
@@ -110,10 +110,8 @@ $(document).ready(function($) {
                 $('input[name="transaction.donationAmt"]:checked').click();
 
                 $('input[value="Other"]').parent().addClass("other-amt");
-                $('input[name="transaction.donationAmt.other"]').parent().addClass("other-amt-input");
-                $('.other-amt-input').appendTo('.other-amt');
             },200);
-        });*/
+        });
 
         //Update total amount when other is updated
         $(document).on('input keyup blur change', '.en__field__input--other', function () {

@@ -163,7 +163,13 @@ form .ProcessForm {
     left: -10000px;
 }
 
-.ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item:not(.en__field__item--other),
+/*.ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item:not(.en__field__item--other),
+.ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
+    display: flex;
+    flex: 1;
+    min-width: 175px;
+}*/
+.ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item,
 .ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
     display: flex;
     flex: 1;
@@ -271,7 +277,7 @@ form .ProcessForm {
 }
 
 .ProcessForm .en__field--donationAmt .en__field__element--radio .other-amt-input {
-    padding: 0px;
+    padding: 6px 0px;
 }
 
 .ProcessForm label[for="en__field_transaction_feeCover"] {
@@ -777,7 +783,11 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__f
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio {
     gap: 8px 24px;
 }
-body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item:not(.en__field__item--other), 
+/*body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item:not(.en__field__item--other), 
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
+    flex: 0 0 calc(50% - 12px);
+}*/
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item, 
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
     flex: 0 0 calc(50% - 12px);
 }
