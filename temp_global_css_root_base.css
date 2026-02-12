@@ -28,37 +28,21 @@
 	--dgd-24px: 2.4rem; /* = 24px */
 	--dgd-28px: 2.8rem; /* = 28px */
 	--dgd-32px: 3.2rem; /* = 32px */
+
+	--dgd-h5: 2.0rem;
+	--dgd-h4: 2.4rem;
+	--dgd-h3: 2.8rem;
+	--dgd-h2: 3.2rem;
+	--dgd-h1: 4.8rem;
 }
 
-/* FLUID FONT-SIZES INCLUDES FALLBACK FOR  */ 
-/* REFERENCE FOR CLAMP VALUES = clamp(min-value, fluid-value + relative-value, max-value); */
-/* FOR BROWSERS THAT SUPPORT CLAMP  */
-@supports (font-size: clamp(1rem, 1vi, 1rem)) {
+@media (max-width: 767px) {
 	:root {
-		--dgd-h5: clamp(1.8rem, 3.9vw + 1rem, 2.2rem); /* = min 18px to max 22px */
-		--dgd-h4: clamp(2.4rem, 3.9vw + 1rem, 2.8rem); /* = min 24px to max 28px */
-		--dgd-h3: clamp(2.8rem, 3.9vw + 1rem, 3.6rem); /* = min 28px to max 36px */
-		--dgd-h2: clamp(3.6rem, 3.9vw + 1rem, 4.8rem); /* = min 36px to max 48px */
-		--dgd-h1: clamp(4.8rem, 3.9vw + 1rem, 6rem); /* = min 48px to max 60px */
-	}
-}
-/* FOR BROWSERS THAT DON'T SUPPORT CLAMP */
-@supports not (font-size: clamp(1rem, 1vi, 1rem)) {
-	:root {
-		--dgd-h5: 2.2rem;
-		--dgd-h4: 2.8rem;
-		--dgd-h3: 3.6rem;
-		--dgd-h2: 4.8rem;
-		--dgd-h1: 6rem;
-	}
-	@media screen and (min-width: 767px) {
-		:root {
-			--dgd-h5: 1.8rem;
-			--dgd-h4: 2.4rem;
-			--dgd-h3: 2.8rem;
-			--dgd-h2: 3.6rem;
-			--dgd-h1: 4.8rem;
-		}
+		--dgd-h5: 2.0rem;
+		--dgd-h4: 2.4rem;
+		--dgd-h3: 2.8rem;
+		--dgd-h2: 3.2rem;
+		--dgd-h1: 3.6rem;
 	}
 }
 

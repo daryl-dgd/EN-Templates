@@ -72,23 +72,15 @@ $(document).ready(function($) {
         //Manage classes of inputs based on what is selected
         $('input[name="transaction.donationAmt"]:checked').parent().addClass("active");
 
+        $('input[name="transaction.donationAmt"]:checked').click();
+
         $(document).on('click', 'input[name="transaction.donationAmt"]', function() {
             $('input[name="transaction.donationAmt"]').parent().removeClass("active");
             $('input[name="transaction.donationAmt"]:checked').parent().addClass("active");
             
             console.log("clicked amount - " + $(this).val());
 
-            if ($(this).val() == "Other") {
-                //$('.other-amt').hide();
-
-                setTimeout(function(){
-                    $('.en__field__input--other').click();
-                    $('.en__field__input--other').focus();
-                },100);
-            }
-            else {
-                //$('.other-amt').show();
-                
+            if ($(this).val() != "Other") {
                 setTimeout(function(){
 					var latestTotal = getTotalAmountText();
 					console.log('latestTotal:', latestTotal);
@@ -96,8 +88,6 @@ $(document).ready(function($) {
 				}, 100);
             }
         });
-        
-        $('input[name="transaction.donationAmt"]:checked').click();
 
         $('input[name="transaction.recurrpay"]').click(function() {
             $('input[name="transaction.recurrpay"]').parent().removeClass("active");
