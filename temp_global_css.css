@@ -196,35 +196,34 @@ form .ProcessForm {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute;
-    left: 5px;
+    left: 20px;
     opacity: 0;
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 0.5s ease;
 }
 
-.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item.active .en__field__label--item,
-.ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item.active .en__field__label--item,
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item .en__field__label--item:hover,
 .ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item .en__field__label--item:hover {
     background: var(--white);
     border: 1px solid var(--black);
 }
-
+.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item.active .en__field__label--item,
+.ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item.active .en__field__label--item {
+    background: var(--paletteColor1);
+    border: 1px solid var(--paletteColor1);
+}
 .ProcessForm .en__field--donationAmt .en__field__element--radio .focus .en__field__label--item,
 .ProcessForm .en__field--recurrpay .en__field__element--radio .focus .en__field__label--item {
     outline: -webkit-focus-ring-color auto 1px;
 }
-
-.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item.active .en__field__label--item:before,
-.ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item.active .en__field__label--item:before {
-    opacity: 1;
-    left: 20px;
-    color: var(--white);
-}
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item .en__field__label--item:hover:before,
 .ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item .en__field__label--item:hover:before {
     opacity: 1;
-    left: 20px;
     color: var(--paletteColor1);
+}
+.ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item.active .en__field__label--item:before,
+.ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item.active .en__field__label--item:before {
+    opacity: 1;
+    color: var(--white);
 }
 
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__input--other {
