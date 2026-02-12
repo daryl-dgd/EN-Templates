@@ -105,9 +105,15 @@ $(document).ready(function($) {
             $('input[name="transaction.recurrpay"]').parent().removeClass("active");
             $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
 
+            console.log("switching Other logic...");
+
             setTimeout(function(){
-                $('input[value="Other"]').parent().addClass("other-amt");
+                //$('input[value="Other"]').parent().addClass("other-amt");
                 $('input[name="transaction.donationAmt"]:checked').click();
+
+                $('input[value="Other"]').parent().addClass("other-amt");
+                $('input[name="transaction.donationAmt.other"]').parent().addClass("other-amt-input");
+                $('.other-amt-input').appendTo('.other-amt');
             },200);
         });
 
