@@ -254,6 +254,9 @@ form .ProcessForm {
 .ProcessForm .en__field--donationAmt .other-amt-input {
 	position: relative;
 }
+.ProcessForm .en__field--donationAmt .en__field__item--hidden.other-amt-input {
+    display: none !important;
+}
 .ProcessForm .en__field--donationAmt .other-amt-input:before {
 	content: "$";
     font-family: var(--fontFamilyButton);

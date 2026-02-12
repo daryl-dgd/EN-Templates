@@ -64,7 +64,7 @@ $(document).ready(function($) {
         //$('.other-amt-input').appendTo('.other-amt');
 		
 		//Add a minimum donation note
-		$('<p style="font-size: 12px; margin-bottom: 0px; position: absolute; bottom: -20px; left: 0;">Minimum donation of $5.00</p>').appendTo('.other-amt-input');
+		$('<p style="font-size: 12px; margin-bottom: 0px; position: absolute; bottom: -15px; left: 0;">Minimum donation of $5.00</p>').appendTo('.other-amt-input');
 
         $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
         
