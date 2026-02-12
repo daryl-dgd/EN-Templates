@@ -186,6 +186,7 @@ form .ProcessForm {
     border: 1px solid var(--paletteColor6);
     height: auto;
     font-family: var(--fontFamilyButton);
+    position: relative;
 }
 
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__label--item:before,
@@ -197,15 +198,15 @@ form .ProcessForm {
     position: absolute;
     left: 5px;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item.active .en__field__label--item,
 .ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item.active .en__field__label--item,
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item .en__field__label--item:hover,
 .ProcessForm .en__field--recurrpay .en__field__element--radio .en__field__item .en__field__label--item:hover {
-    background: var(--paletteColor1);
-    border: 1px solid var(--paletteColor1);
+    background: var(--white);
+    border: 1px solid var(--black);
 }
 
 .ProcessForm .en__field--donationAmt .en__field__element--radio .focus .en__field__label--item,
@@ -571,7 +572,8 @@ form .ProcessForm {
 
 .ProcessForm .en__submit button:hover,
 .ProcessForm button.en__submit:hover  {
-    background: var(--paletteColor1);
+    background: var(--white);
+    border-color: 1px solid var(--paletteColor1);
     color: var(--black);
 }
 

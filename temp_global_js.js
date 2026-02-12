@@ -69,7 +69,7 @@ $(document).ready(function($) {
         $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
         
         //Add objects for $ amount and Monthly to the submit button
-        $('.en__submit button').append(" <span class='totalAmount'></span><span class='monthlyToggle'> Monthly</span>");
+        //$('.en__submit button').append(" <span class='totalAmount'></span><span class='monthlyToggle'> Monthly</span>");
 	
         //Manage classes of inputs based on what is selected
         $('input[name="transaction.donationAmt"]:checked').parent().addClass("active");
