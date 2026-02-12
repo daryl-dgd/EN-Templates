@@ -102,15 +102,13 @@ $(document).ready(function($) {
         $('input[name="transaction.donationAmt"]:checked').click();
 
         $('input[name="transaction.recurrpay"]').click(function() {
-            //$('input[name="transaction.recurrpay"]').parent().removeClass("active");
-            console.log("new frequency click function");
-            
-            setTimeout(function(){
-                $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
+            $('input[name="transaction.recurrpay"]').parent().removeClass("active");
+            $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
 
+            setTimeout(function(){
                 $('input[value="Other"]').parent().addClass("other-amt");
                 $('input[name="transaction.donationAmt"]:checked').click();
-            },500);
+            },200);
         });
 
         //Update total amount when other is updated
@@ -120,19 +118,8 @@ $(document).ready(function($) {
 				var latestTotal = getTotalAmountText();
 				console.log('Syncing Other Total:', latestTotal);
 				$('.totalAmount').text(latestTotal);
-			}, 200); // 200ms is usually the sweet spot for EN calculations
+			}, 200);
 		});
-
-        //Build array of donation levels and split them between One-Time and Monthly options
-        /*$('.en__field--donationAmt label').each(function() {
-            if ($(this).text().trim() === "Onetime") {
-                $(this).text("$" + $(this).prev('.en__field__input').val());
-                $(this).parent().addClass("don-level one-time");
-            } else if ($(this).text().trim() === "Monthly") {
-                $(this).text("$" + $(this).prev('.en__field__input').val());
-                $(this).parent().addClass("don-level monthly");
-            }
-        });*/
 
         //Accessibility on giving levels - focus state
         $(".en__field--donationAmt input").on('focus', function(){
