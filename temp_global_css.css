@@ -46,13 +46,6 @@ body.en__Donation .en__component--advrow.en__Donation {
     margin: 60px auto;
     padding: 0px 20px;
 }
-body.en__Donation.en__MultiStep_Form .en__component--advrow.en__Donation {
-    max-width: 100%;
-    margin: 0px;
-    padding: 64px;
-    justify-content: space-between;
-    gap: 95px;
-}
 body.en__Donation .en__component--advrow.custom-header {
     background-color: var(--white);
 }
@@ -67,6 +60,10 @@ body.en__Donation .en__component--advrow.custom-header .en__component--advcolumn
 /* EN Page Editor */
 #en__pagebuilder .en__hidden {
     display: inherit !important;
+}
+#en__pagebuilder .main-container.frow-container {
+    max-width: 100%;
+    padding: 0px 60px;
 }
 #en__pagebuilder .en__hidden .bannerImgSrc {
     max-width: 600px;
@@ -87,9 +84,6 @@ body.en__Donation .en__component--advrow.custom-header .en__component--advcolumn
 form.en__component--page {
     margin: 0px auto 60px;
     padding-top: 20px;
-}
-body.en__Donation.en__MultiStep_Form form.en__component--page {
-    margin: 0px;
 }
 
 form .ProcessForm {
@@ -137,6 +131,17 @@ form .ProcessForm {
 .ProcessForm .en__field--donationAmt>label,
 .ProcessForm .en__field--recurrpay>label {
     display: none;
+}
+
+.ProcessForm .en__field--recurrpay,
+.ProcessForm .en__field--donationAmt {
+    padding-top: 16px;
+    border-top: 1px solid var(--paletteColor7);
+}
+.ProcessForm .en__field--donationAmt {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--paletteColor7);
 }
 
 .ProcessForm .en__field--donationAmt .en__field__element--radio,
@@ -521,7 +526,8 @@ form .ProcessForm {
 	text-align: right;
 }
 
-.ProcessForm .en__submit button {
+.ProcessForm .en__submit button,
+.ProcessForm button.en__submit {
     display: block;
     background: var(--paletteColor1);
     color: var(--black);
@@ -538,30 +544,10 @@ form .ProcessForm {
     font-family: var(--fontFamilyButton);
 }
 
-.ProcessForm .en__submit button:hover {
+.ProcessForm .en__submit button:hover,
+.ProcessForm button.en__submit:hover  {
     background: var(--paletteColor1);
-    color: var(--paletteColor2);
-}
-
-.ProcessForm button.en__submit {
-    display: block;
-    background: var(--paletteColor2);
-    color: var(--paletteColor1);
-    text-align: center;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: 600;
-    width: auto;
-    max-width: inherit;
-    padding: 10px 15px;
-    border: 3px solid var(--paletteColor1);
-    height: auto;
-}
-
-.ProcessForm button.en__submit:hover {
-    background: var(--paletteColor1);
-    color: var(--paletteColor2);
+    color: var(--white);
 }
 
 .ProcessForm .en__captcha {
@@ -644,9 +630,19 @@ body.en__Donation .ProcessForm .en__field__item.other-amt.active p {
 }
 
 /* Multi-Step CSS */
-body.en__Donation.en__MultiStep_Form .ProcessFormIntro {
-    max-width: 600px;
+body.en__Donation.en__MultiStep_Form form.en__component--page {
+    margin: 0px;
 }
+body.en__Donation.en__MultiStep_Form .en__component--advrow.en__Donation {
+    max-width: 100%;
+    margin: 0px;
+    padding: 64px;
+    justify-content: space-between;
+    gap: clamp(30px, 6vw, 95px);
+}
+/*body.en__Donation.en__MultiStep_Form .ProcessFormIntro {
+    max-width: 600px;
+}*/
 body.en__Donation.en__MultiStep_Form .ProcessFormIntro h1 {
     color: var(--white);
 }
@@ -661,6 +657,14 @@ body.en__Donation.en__MultiStep_Form .ProcessFormIntro .ctaImage {
 body.en__Donation.en__MultiStep_Form .ProcessForm {
     padding: 60px;
     box-shadow: none;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio, 
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio {
+    gap: 8px 24px;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item:not(.en__field__item--other), 
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
+    flex: 0 0 calc(50% - 12px);
 }
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit {
     border: none;
