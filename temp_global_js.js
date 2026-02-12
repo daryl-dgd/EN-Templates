@@ -79,7 +79,7 @@ $(document).ready(function($) {
             console.log("clicked amount - " + $(this).val());
 
             if ($(this).val() == "Other") {
-                $('.other-amt').hide();
+                //$('.other-amt').hide();
 
                 setTimeout(function(){
                     $('.en__field__input--other').click();
@@ -87,7 +87,7 @@ $(document).ready(function($) {
                 },100);
             }
             else {
-                $('.other-amt').show();
+                //$('.other-amt').show();
                 
                 setTimeout(function(){
 					var latestTotal = getTotalAmountText();
@@ -106,7 +106,7 @@ $(document).ready(function($) {
             setTimeout(function(){
                 $('input[value="Other"]').parent().addClass("other-amt");
                 $('input[name="transaction.donationAmt"]:checked').click();
-            },50);
+            },200);
         });
 
         //Update total amount when other is updated

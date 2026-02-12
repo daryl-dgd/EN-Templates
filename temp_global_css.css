@@ -251,6 +251,9 @@ form .ProcessForm {
 }
 
 /* Dollar sign fix */
+.ProcessForm .en__field--donationAmt.en__field--withOther--active .en__field__item.other-amt.active {
+    display: none !important;
+}
 .ProcessForm .en__field--donationAmt .other-amt-input {
 	position: relative;
 }
@@ -740,7 +743,7 @@ form .ProcessForm {
     padding: 10px;
 }
 
-body.en__Donation .ProcessForm .en__field__item.other-amt.active {
+/*body.en__Donation .ProcessForm .en__field__item.other-amt.active {
     flex-direction: column;
     text-align: left;
     position: relative;
@@ -750,7 +753,7 @@ body.en__Donation .ProcessForm .en__field__item.other-amt p {
 }
 body.en__Donation .ProcessForm .en__field__item.other-amt.active p {
     display: block;
-}
+}*/
 
 /* Multi-Step CSS */
 body.en__Donation.en__MultiStep_Form form.en__component--page {
