@@ -251,7 +251,7 @@ form .ProcessForm {
 }
 
 /* Dollar sign fix */
-.ProcessForm .en__field--donationAmt.en__field--withOther--active .en__field__item.other-amt.active {
+.ProcessForm .en__field--donationAmt.en__field--withOther--active .en__field__item:has(input[value="Other"]:checked) {
     display: none !important;
 }
 .ProcessForm .en__field--donationAmt .other-amt-input {
