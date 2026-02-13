@@ -785,6 +785,39 @@ body.en__Donation.en__MultiStep_Form .ProcessForm {
     padding: 60px;
     box-shadow: none;
 }
+body.en__Donation.en__MultiStep_Form .ProcessForm .page-step-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8px;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--white);
+    text-align: center;
+    color: var(--paletteColor6);
+    border: 1px solid var(--paletteColor6);
+    border-radius: 18px;
+    line-height: 32px;
+    font-size: 18px;
+    font-family: var(--fontFamilySecondary);
+    font-weight: 700;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step.active {
+    background-color: var(--paletteColor1);
+    border-color: var(--paletteColor1);
+    color: var(--black);
+    cursor: pointer;
+}
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio, 
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio {
     gap: 8px 24px;

@@ -44,6 +44,40 @@ $(document).ready(function($) {
     if($('.en__Static').length > 0){
         $('body').addClass("en__Static");
     }
+
+    /* Progress Tracker */
+    var $trackerContainer = $('.progress-tracker-container');
+    
+    if ($trackerContainer.length > 0) {
+        var $configElement = $('[class*="progress-step-"]').first();
+        
+        if ($configElement.length > 0) {
+            var classList = $configElement.attr('class');
+            var match = classList.match(/progress-step-(\d+)-(\d+)/);
+            
+            if (match) {
+                var currentStep = parseInt(match[1], 10);
+                var totalSteps = parseInt(match[2], 10);
+                
+                buildProgressTracker($trackerContainer, currentStep, totalSteps);
+            }
+        }
+    }
+
+    function buildProgressTracker($container, current, total) {
+        var html = '';
+        for (var i = 1; i <= total; i++) {
+            var statusClass = (i < current) ? 'completed' : (i === current ? 'active' : 'pending');
+            html += '<div class="step ' + statusClass + '">' +
+                        '<span class="step-number">' + i + '</span>' +
+                    '</div>';
+        }
+
+        var trackerWrapper = '<div class="progress-tracker-ui">' + html + '</div>';
+        $container.append(trackerWrapper);
+        
+        $('.progress-step-text, .progress-tracker-ui').wrapAll($('<div class="page-step-container"/>'));
+    }
 	
 	if($('.page-1').length > 0){
         //Donation form page, run appropriate JS
