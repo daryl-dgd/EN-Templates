@@ -123,7 +123,7 @@ $(document).ready(function($) {
             }
         });
 
-        $('input[name="transaction.recurrpay"]').click(function() {
+        $(document).on('change', 'input[name="transaction.recurrpay"]', function() {
             $('input[name="transaction.recurrpay"]').parent().removeClass("active");
             $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
 
