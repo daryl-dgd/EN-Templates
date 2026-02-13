@@ -143,20 +143,12 @@ $(document).ready(function($) {
 			}, 200);
 		});
 
-        //Accessibility on giving levels - focus state
-        $(".en__field--donationAmt input").on('focus', function(){
+        // Accessibility on giving levels - focus state (Delegated)
+        $(document).on('focusin', '.en__field--donationAmt input, .en__field--recurrpay input', function() {
             $(this).parent().addClass('focus');
         });
 
-        $(".en__field--donationAmt input").on('focusout', function(){
-            $(this).parent().removeClass('focus');
-        });
-
-        $(".en__field--recurrpay input").on('focus', function(){
-            $(this).parent().addClass('focus');
-        });
-
-        $(".en__field--recurrpay input").on('focusout', function(){
+        $(document).on('focusout', '.en__field--donationAmt input, .en__field--recurrpay input', function() {
             $(this).parent().removeClass('focus');
         });
 		
