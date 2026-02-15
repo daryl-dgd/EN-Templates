@@ -84,7 +84,7 @@ $(document).ready(function($) {
         
         var $newContainer = $('<div class="secure-container"></div>');
         $newContainer.append($img);
-        $newContainer.append('<span class="secure-text">' + text + '</span>');
+        $newContainer.append('<p class="secure-text">' + text + '</p>');
         
         $p.replaceWith($newContainer);
     });
