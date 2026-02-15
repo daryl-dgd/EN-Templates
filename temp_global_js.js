@@ -1,7 +1,4 @@
 $(document).ready(function($) {
-
-	console.log('global_js');
-
     //Add link to header logo
     var $headerLogo = $('.custom-header img.headerLogo').first();
 
@@ -91,8 +88,8 @@ $(document).ready(function($) {
 			}, delay || 100);
 		}
 		
+        /* Is this needed with below functions?*/
 		$('input[value="Other"]').parent().addClass("other-amt");
-
         $('input[name="transaction.donationAmt.other"]').parent().addClass("other-amt-input");
 		
 		//Add a minimum donation note
@@ -102,19 +99,39 @@ $(document).ready(function($) {
         
         //Add objects for $ amount and Monthly to the submit button
         //$('.en__submit button').append(" <span class='totalAmount'></span><span class='monthlyToggle'> Monthly</span>");
-	
-        //Manage classes of inputs based on what is selected
-        $('input[name="transaction.donationAmt"]:checked').parent().addClass("active");
 
-        $('input[name="transaction.donationAmt"]:checked').click();
+        // A master function to restore ALL visual states
+        function restoreDonationState() {
+            // 1. Restore Active Classes
+            $('.en__field--donationAmt .en__field__item').removeClass('active');
+            var $checkedInput = $('input[name="transaction.donationAmt"]:checked');
+            if ($checkedInput.length > 0) {
+                $checkedInput.closest('.en__field__item').addClass('active');
+            }
+        
+            // 2. Restore "Other" Input State
+            // If the "Other" radio is checked, ensure the text input is visible
+            if ($checkedInput.val() === 'Other') {
+                var $otherInput = $('input[name="transaction.donationAmt.other"]');
+                $otherInput.closest('.en__field__item').addClass('active');
+            }
+            
+            $('input[value="Other"]').parent().addClass("other-amt");
+        }
 
-        /*$(document).on('change', 'input[name="transaction.donationAmt"]', function() {
-            $('input[name="transaction.donationAmt"]').parent().removeClass("active");
-            $('input[name="transaction.donationAmt"]:checked').parent().addClass("active");
+        /* Donation levels */
+        $(document).on('change', 'input[name="transaction.donationAmt"]', function() {
+            restoreDonationState();
             
             console.log("clicked amount - " + $(this).val());
-
-            if ($(this).val() != "Other") {
+            
+            if ($(this).val() === "Other") {
+                var $otherInput = $('input[name="transaction.donationAmt.other"]');
+                setTimeout(function() {
+                    $otherInput.focus();
+                }, 50);
+            }
+            else {
                 setTimeout(function(){
 					var latestTotal = getTotalAmountText();
 					console.log('latestTotal:', latestTotal);
@@ -123,14 +140,10 @@ $(document).ready(function($) {
             }
         });
 
+        /* Frequency Buttons */
         $(document).on('change', 'input[name="transaction.recurrpay"]', function() {
             $('input[name="transaction.recurrpay"]').parent().removeClass("active");
             $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
-
-            setTimeout(function(){
-                $('input[value="Other"]').parent().addClass("other-amt");
-                $('input[name="transaction.donationAmt"]:checked').click();
-            },200);
         });
 
         //Update total amount when other is updated
@@ -143,14 +156,38 @@ $(document).ready(function($) {
 			}, 200);
 		});
 
-        // Accessibility on giving levels - focus state (Delegated)
+        // Accessibility on giving levels - focus state
         $(document).on('focusin', '.en__field--donationAmt input, .en__field--recurrpay input', function() {
             $(this).parent().addClass('focus');
         });
 
         $(document).on('focusout', '.en__field--donationAmt input, .en__field--recurrpay input', function() {
             $(this).parent().removeClass('focus');
-        });*/
+        });
+
+        $('input[name="transaction.donationAmt.other"]').on('keydown', function(e) {
+            if (e.shiftKey && (e.keyCode === 9 || e.key === 'Tab')) {
+                
+                var $textWrapper = $(this).closest('.en__field__item');
+        
+                // 2. Look backwards for the first sibling that is NOT the "Other" radio wrapper
+                // We use prevAll() to look at all previous siblings, filter out the "Other" radio wrapper,
+                // and grab the first one we find (which will be the $50 level).
+                var $targetWrapper = $textWrapper.prevAll('.en__field__item:not(.other-amt)').first();
+                var $targetRadio = $targetWrapper.find('input[type="radio"]');
+        
+                if ($targetRadio.length > 0) {
+                    e.preventDefault();
+                    
+                    $textWrapper.hide().removeClass('active');
+                    $('.other-amt').show().removeClass('active');
+                    $(this).val('');
+        
+                    // 4. Click the $50 radio and focus it
+                    $targetRadio.prop('checked', true).trigger('change').focus();
+                }
+            }
+        });
 		
         //Wrap elements in donor-info div
         $('.en__field--title').wrap($('<div class="donor-info"/>'));
@@ -218,6 +255,38 @@ $(document).ready(function($) {
 		$(document).on('change', '#en__field_transaction_feeCover', function () {
 			syncTotalAmount(150);
 		});
+
+        restoreDonationState();
+		var targetNode = document.querySelector('.en__field--donationAmt');
+		if (targetNode) {
+            // 3. Create the Observer
+            var observer = new MutationObserver(function(mutations) {
+                // We only care if nodes were added/removed (ChildList)
+                var shouldRestore = false;
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList') {
+                        shouldRestore = true;
+                    }
+                });
+    
+                if (shouldRestore) {
+                    // Temporarily disconnect to avoid infinite loops if our 
+                    // restore function modifies the DOM structure significantly
+                    observer.disconnect();
+                    
+                    restoreDonationState();
+                    
+                    // Reconnect immediately
+                    observer.observe(targetNode, config);
+                }
+            });
+    
+            // 4. Configuration: Watch for changes to direct children and subtree
+            var config = { childList: true, subtree: true };
+    
+            // 5. Start Observing
+            observer.observe(targetNode, config);
+        }
     
     } else if ($('.page-ty').length > 0){
         //Thank You Page
@@ -235,22 +304,15 @@ $(document).ready(function($) {
 
 (function() {
     function setCustomBackground() {
-        console.log("Custom Background Script: Running...");
-        
-        // 1. Try to find the element
         const configEl = document.querySelector('.en-bg-config');
         
         if (!configEl) {
-            console.log("Custom Background Script: No config element found.");
             return;
         }
-
-        console.log("Custom Background Script: Element found!", configEl);
 
         const body = document.body;
         const type = configEl.getAttribute('data-type');
         
-        // 2. Add class and styles
         body.classList.add('custom-bg-active');
 
         if (type === 'solid') {
@@ -269,7 +331,6 @@ $(document).ready(function($) {
         }
     }
 
-    // 3. Robust Execution: Run immediately if loaded, otherwise wait
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', setCustomBackground);
     } else {

@@ -204,7 +204,7 @@ form .ProcessForm {
     position: absolute;
     left: 20px;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    /*transition: opacity 0.5s ease;*/
 }
 
 .ProcessForm .en__field--donationAmt .en__field__element--radio .en__field__item .en__field__label--item:hover,
@@ -248,6 +248,9 @@ form .ProcessForm {
     height: auto;
     margin: 0px;
     font-family: var(--fontFamilyButton);
+}
+.ProcessForm .en__field--donationAmt.en__field--withOther--active .en__field__item.active:has(input[name="transaction.donationAmt.other"]) {
+    display: flex !important;
 }
 
 /* Dollar sign fix */
@@ -573,6 +576,9 @@ form .ProcessForm {
   transform: rotate(45deg);
   -webkit-transform: rotate();
 }
+.en__field--checkbox input[type="checkbox"]:focus + label::before {
+    outline: -webkit-focus-ring-color auto 1px;
+}
 
 /*Payment Info*/
 #payment_cc_type_row ul {
@@ -661,7 +667,7 @@ form .ProcessForm {
     position: absolute;
     left: 20px;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    /*transition: opacity 0.5s ease;*/
 }
 
 .ProcessForm .en__submit button:hover,
