@@ -533,6 +533,9 @@ form .ProcessForm {
   position: absolute;
   left: -10000px;
 }
+.ProcessForm .en__field--checkbox .en__field__label--item {
+    cursor: pointer;
+}
 .ProcessForm label[for="en__field_transaction_inmem"] {
   display: inline;
   max-width: inherit;
@@ -671,13 +674,25 @@ form .ProcessForm {
 }
 
 .ProcessForm .en__submit button:hover,
-.ProcessForm button.en__submit:hover  {
+.ProcessForm .en__submit button:focus,
+.ProcessForm .en__submit button:focus-within,
+.ProcessForm .en__submit button:focus-visible,
+.ProcessForm button.en__submit:hover,
+.ProcessForm button.en__submit:focus,
+.ProcessForm button.en__submit:focus-within,
+.ProcessForm button.en__submit:focus-visible  {
     background: var(--white);
     border: 1px solid var(--paletteColor1);
     color: var(--black);
 }
 .ProcessForm .en__submit button:hover:before,
-.ProcessForm button.en__submit:hover:before {
+.ProcessForm .en__submit button:focus:before,
+.ProcessForm .en__submit button:focus-within:before,
+.ProcessForm .en__submit button:focus-visible:before,
+.ProcessForm button.en__submit:hover:before,
+.ProcessForm button.en__submit:focus:before,
+.ProcessForm button.en__submit:focus-within:before,
+.ProcessForm button.en__submit:focus-visible:before {
     color: var(--paletteColor1);
     opacity: 1;
 }
@@ -841,6 +856,20 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit {
     margin: 16px 0px;
     padding: 0px;
 	text-align: unset;
+}
+.ProcessForm .secure-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.ProcessForm .secure-container img {
+    display: block;
+}
+
+.ProcessForm .secure-text {
+    margin-bottom: 0px;
 }
 
 /* Campaign Form Overrides */

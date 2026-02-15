@@ -75,6 +75,19 @@ $(document).ready(function($) {
         
         $('.progress-step-text, .progress-tracker-ui').wrapAll($('<div class="page-step-container"/>'));
     }
+
+    var $secureBlock = $('.secure-donation');
+    $secureBlock.each(function() {
+        var $p = $(this).find('p');
+        var $img = $p.find('img').detach();
+        var text = $p.text().trim();
+        
+        var $newContainer = $('<div class="secure-container"></div>');
+        $newContainer.append($img);
+        $newContainer.append('<span class="secure-text">' + text + '</span>');
+        
+        $p.replaceWith($newContainer);
+    });
 	
 	if($('.page-1').length > 0){
         //Donation form page, run appropriate JS
