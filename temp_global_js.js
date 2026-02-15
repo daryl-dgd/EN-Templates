@@ -108,7 +108,7 @@ $(document).ready(function($) {
 
         $('input[name="transaction.donationAmt"]:checked').click();
 
-        $(document).on('click', 'input[name="transaction.donationAmt"]', function() {
+        /*$(document).on('change', 'input[name="transaction.donationAmt"]', function() {
             $('input[name="transaction.donationAmt"]').parent().removeClass("active");
             $('input[name="transaction.donationAmt"]:checked').parent().addClass("active");
             
@@ -150,7 +150,7 @@ $(document).ready(function($) {
 
         $(document).on('focusout', '.en__field--donationAmt input, .en__field--recurrpay input', function() {
             $(this).parent().removeClass('focus');
-        });
+        });*/
 		
         //Wrap elements in donor-info div
         $('.en__field--title').wrap($('<div class="donor-info"/>'));
