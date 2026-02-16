@@ -533,12 +533,16 @@ form .ProcessForm {
   position: absolute;
   left: -10000px;
 }
+.ProcessForm .en__field--checkbox .en__field__element--checkbox > .en__field__item {
+    padding-bottom: 0px;
+}
 .ProcessForm .en__field--checkbox .en__field__label--item {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 10px;
     line-height: 120%;
+    padding-bottom: 0px;
     cursor: pointer;
 }
 .ProcessForm label[for="en__field_transaction_inmem"] {
@@ -952,7 +956,7 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
         margin-top: 30px;
     }	
 	body.en__Donation .en__component--advrow.custom-header .en__component--advcolumn {
-		padding: 15px 20px;
+		padding: 16px 20px;
 	}
 	body.en__Donation .en__component--advrow.custom-header img {
 		max-height: 75px;
@@ -1010,10 +1014,12 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
         min-width: unset;
     }
     body.en__Donation.en__MultiStep_Form .footer-top {
-        padding: 15px 20px 0px;
+        padding: 16px 20px 0px;
     }
     body.en__Donation.en__MultiStep_Form .footer-inner {
-        padding: 15px 20px;
+        padding: 16px 20px;
+        display: flex;
+        flex-direction: column;
         gap: 16px;
     }
     body.en__Donation.en__MultiStep_Form .footer-inner .footerBadges {
@@ -1028,8 +1034,8 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
 	}
 	.ProcessForm h2.section-header-container {
 		font-size: 24px;
-		padding: 15px 0 0;
-		margin: 15px 0;
+		padding: 16px 0 0;
+		margin: 16px 0;
 	}
 	.main-container {
         width: 100%;
@@ -1066,7 +1072,7 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
     .monthly-cta-container {
         display: none;
     }
-    .ProcessForm .en__field.en__field--donationAmt {
+    body.en__Donation.en__MultiStep_Form .ProcessForm .en__field.en__field--donationAmt {
         margin: 16px 0px;
     }
     .footer-top {
