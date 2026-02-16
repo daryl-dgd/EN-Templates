@@ -101,7 +101,6 @@ $(document).ready(function($) {
 			}, delay || 100);
 		}
 		
-        /* Is this needed with below functions?*/
 		$('input[value="Other"]').parent().addClass("other-amt");
         $('input[name="transaction.donationAmt.other"]').parent().addClass("other-amt-input");
 		
@@ -201,6 +200,18 @@ $(document).ready(function($) {
                 }
             }
         });
+
+        //Monthly CTA
+        $('.en__field--recurrpay .en__field__item').last().addClass("onetime");
+        $('.en__field--recurrpay .en__field__item').last().addClass("monthly");
+        var monthlyCTA = '<div class="monthly-cta-container">' +
+                            '<img src="https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10080/monthly-cta-arrow.png?v=1771254205000" alt="" class="monthly-cta-img" width="59" height="73">' +
+                            '<p class="monthly-cta-text">' +
+                                'Give monthly to support the mission and make your impact go further.' +
+                            '</p>' +
+                        '</div>';
+
+        $('.en__field--recurrpay .en__field__item').last().append(monthlyCTA);
 		
         //Wrap elements in donor-info div
         $('.en__field--title').wrap($('<div class="donor-info"/>'));

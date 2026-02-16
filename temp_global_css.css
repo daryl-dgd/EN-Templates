@@ -534,6 +534,11 @@ form .ProcessForm {
   left: -10000px;
 }
 .ProcessForm .en__field--checkbox .en__field__label--item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 120%;
     cursor: pointer;
 }
 .ProcessForm label[for="en__field_transaction_inmem"] {
@@ -552,7 +557,6 @@ form .ProcessForm {
   vertical-align: top;
   cursor: pointer;
   margin-top: 0px;
-  margin-right: 10px;
   height: 20px;
   width: 20px;
   flex: 0 0 auto;
@@ -803,6 +807,7 @@ body.en__Donation.en__MultiStep_Form .ProcessFormIntro .ctaImage {
     display: block;
 }
 body.en__Donation.en__MultiStep_Form .ProcessForm {
+    min-width: 620px;
     padding: 60px;
     box-shadow: none;
 }
@@ -811,10 +816,12 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .page-step-container {
     flex-direction: row;
     justify-content: space-between;
 }
+.ProcessForm .page-step-container h2 {
+    margin-bottom: 0px;
+}
 body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     gap: 8px;
 }
 body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step {
@@ -839,6 +846,9 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step.act
     color: var(--black);
     cursor: pointer;
 }
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__field.en__field--donationAmt {
+    margin: 0px 0px 16px;
+}
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio, 
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio {
     gap: 8px 24px;
@@ -850,6 +860,21 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__fie
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item, 
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
     flex: 0 0 calc(50% - 12px);
+}
+.ProcessForm .en__field--recurrpay .en__field__item.monthly {
+    flex-direction: column;
+    gap: 8px;
+}
+.monthly-cta-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 12px;
+    align-items: center;
+}
+.monthly-cta-container .monthly-cta-text {
+    margin-bottom: 0px;
 }
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit {
     border: none;
@@ -903,6 +928,16 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
         height: 300px;
     }
 }
+@media (max-width: 1300px) {
+    body.en__Donation.en__MultiStep_Form .en__component--advrow.en__Donation {
+        padding: 40px 20px;
+        gap: 20px;
+    }
+    body.en__Donation.en__MultiStep_Form .ProcessForm {
+        min-width: 560px;
+        padding: 24px;
+    }
+}
 @media (max-width: 1200px) {
     .main-container {
         max-width: 970px;
@@ -910,9 +945,9 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
 }
 
 @media (max-width: 1024px) {
-    body {
+    /*body {
         background-image: none !important;
-    }
+    }*/
     main {
         margin-top: 30px;
     }	
@@ -964,6 +999,26 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
     .en__field--ccvv #en__field_transaction_ccvv {
         width: 100%;
     }
+
+    body.en__Donation.en__MultiStep_Form .en__component--advrow.en__Donation {
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+    }
+    body.en__Donation.en__MultiStep_Form .ProcessForm {
+        width: 100%;
+        min-width: unset;
+    }
+    body.en__Donation.en__MultiStep_Form .footer-top {
+        padding: 15px 20px 0px;
+    }
+    body.en__Donation.en__MultiStep_Form .footer-inner {
+        padding: 15px 20px;
+        gap: 16px;
+    }
+    body.en__Donation.en__MultiStep_Form .footer-inner .footerBadges {
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 991px) {
@@ -992,6 +1047,28 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
 }
 
 @media (max-width: 767px) {
+    body.en__Donation.en__MultiStep_Form .en__component--advrow.en__Donation {
+        padding: 20px;
+    }
+    body.en__Donation.en__MultiStep_Form .ProcessForm {
+        padding: 20px;
+    }
+    body.en__Donation.en__MultiStep_Form .ProcessForm .page-step-container {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+    body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio, body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio {
+        gap: 8px;
+    }
+    body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--donationAmt .en__field__element--radio>.en__field__item, body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__field__element--radio>.en__field__item {
+        flex: 0 0 calc(50% - 4px);
+    }
+    .monthly-cta-container {
+        display: none;
+    }
+    .ProcessForm .en__field.en__field--donationAmt {
+        margin: 16px 0px;
+    }
     .footer-top {
         padding: 20px 0px;
     }
