@@ -521,6 +521,9 @@ form .ProcessForm {
 }
 
 /* Custom Checkbox */
+.ProcessForm .en__field--question > .en__field__label {
+    display: none;
+}
 .ProcessForm .en__field--inmem > label.en__field__label {
     display: none;
 }
@@ -544,6 +547,7 @@ form .ProcessForm {
     line-height: 120%;
     padding-bottom: 0px;
     cursor: pointer;
+    position: relative;
 }
 .ProcessForm label[for="en__field_transaction_inmem"] {
   display: inline;
@@ -578,7 +582,7 @@ form .ProcessForm {
   display: block;
   background: var(--white);
   position: absolute;
-  top: 7px;
+  top: 1px;
   left: 7px;
   width: 7px;
   height: 13px;
@@ -1036,6 +1040,10 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
     }
     body.en__Donation.en__MultiStep_Form .footer-top {
         padding: 16px 20px 0px;
+    }
+    body.en__Donation.en__MultiStep_Form .footer-top .footerLogo {
+        width: 188px !important;
+        padding: 16px 0px 0px;
     }
     body.en__Donation.en__MultiStep_Form .footer-inner {
         padding: 16px 20px;

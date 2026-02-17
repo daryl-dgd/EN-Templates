@@ -89,7 +89,7 @@ $(document).ready(function($) {
         $p.replaceWith($newContainer);
     });
 	
-	if($('.page-1').length > 0){
+	if($('.donate-page').length > 0){
         //Donation form page, run appropriate JS
     
 		function getTotalAmountText() {
@@ -213,20 +213,38 @@ $(document).ready(function($) {
 
         $('.en__field--recurrpay .en__field__item').last().append(monthlyCTA);
 		
-        //Wrap elements in donor-info div
-        $('.en__field--title').wrap($('<div class="donor-info"/>'));
-        $('.en__field--firstName, .en__field--lastName').wrapAll($('<div class="donor-info"/>'));
-        //$('.en__field--infname').wrapAll($('<div class="donor-info tribute-fields"/>'));
-        $('.en__field--address1, .en__field--address2').wrapAll($('<div class="donor-info"/>'));
-        //$('.en__field--infadd1, .en__field--infadd2').wrapAll($('<div class="donor-info tribute-fields"/>'));
-        $('.en__field--city, .en__field--region').wrapAll($('<div class="donor-info"/>'));
-        //$('.en__field--infcity, .en__field--infreg').wrapAll($('<div class="donor-info tribute-fields"/>'));
-        $('.en__field--postcode, .en__field--country').wrapAll($('<div class="donor-info"/>'));
-        $('.en__field--emailAddress, .en__field--phoneNumber').wrapAll($('<div class="donor-info"/>'));
-        $('.en__field--ccexpire, .en__field--ccvv').wrapAll($('<div class="donor-info"/>'));
+        //Update Opt-in Question label
+        var $optInContainer = $('.en__field--general-opt-in');
+        if ($optInContainer.length > 0) {
+            var $originalHeaderLabel = $optInContainer.find('> .en__field__label');
+            var $checkboxLabel = $optInContainer.find('.en__field__item .en__field__label--item');
+    
+            var questionText = $originalHeaderLabel.text().trim();
+    
+            if (questionText) {
+                $checkboxLabel.text(questionText);
+            }
+        }
 
+        //Wrap Tribute fields (1)
         $('.en__field--infcountry, .en__field--infreg').wrapAll($('<div class="donor-info tribute-fields"/>'));
         $('.en__field--infcity, .en__field--infpostcd').wrapAll($('<div class="donor-info tribute-fields"/>'));
+
+        //Wrap Details fields (2)
+        $('.en__field--title, .en__field--firstName, .en__field--lastName').wrapAll($('<div class="donor-info"/>'));
+        $('.en__field--emailAddress').wrap($('<div class="donor-info"/>'));
+        $('.en__field--phoneNumber').wrap($('<div class="donor-info"/>'));
+
+        //Wrap Payment fields (3)
+        $('.en__field--ccexpire').wrap($('<div class="donor-info"/>'));
+        $('.en__field--ccvv').wrap($('<div class="donor-info"/>'));
+
+        //Wrap Address fields (4)
+        $('.en__field--address1').wrap($('<div class="donor-info"/>'));
+        $('.en__field--address2').wrap($('<div class="donor-info"/>'));
+        $('.en__field--city, .en__field--region').wrapAll($('<div class="donor-info"/>'));
+        $('.en__field--postcode, .en__field--country').wrapAll($('<div class="donor-info"/>'));
+
 
         //Add blank options to beginning of dropdowns
         var blankTitle = $('<option></option>').attr('value', '').text('');
@@ -375,11 +393,16 @@ window.enOnValidate = function(){
 
 window.enOnSubmit = function() {
     return new Promise(function(resolve, reject) {
-        var spinner = '<i class="fa-solid fa-spinner fa-spin-pulse"></i>';
+        var isLastPage = $('.en__submit__container').length > 0;
+
+        if (isLastPage) {
+            var spinner = '<i class="fa-solid fa-spinner fa-spin-pulse"></i>';
        
-        $('.en__submit button').text("Processing ");
-        $('.en__submit button').append(spinner);
-        $('.en__submit button').prop("disabled", true);
+            $('.en__submit button').text("Processing ");
+            $('.en__submit button').append(spinner);
+            $('.en__submit button').prop("disabled", true);
+        }
+
         resolve();
     });
 }
