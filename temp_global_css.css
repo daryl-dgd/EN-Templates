@@ -744,6 +744,14 @@ form .ProcessForm {
     justify-content: flex-end;
     gap: 24px;
 }
+.footer-inner .footer-details .footerBadges p {
+    margin: 0px;
+    font-size: 0px;
+    line-height: 0;
+}
+.footer-inner .footer-details .footerBadges p img {
+    display: block;
+}
 
 
 /*Error Handling*/
