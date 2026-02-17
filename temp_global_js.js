@@ -66,13 +66,15 @@ $(document).ready(function($) {
         for (var i = 1; i <= total; i++) {
             var statusClass = (i < current) ? 'completed' : (i === current ? 'active' : 'pending');
 
+            if (i === current) {
+                $('body').addClass('page-' + i);
+            }
+
             var stepContent = (statusClass === 'completed') 
                 ? '<i class="fa-solid fa-check"></i>' 
                 : '<span class="step-number">' + i + '</span>';
 
             html += '<div class="step ' + statusClass + '">' + stepContent + '</div>';
-
-            $('body').addClass("page-" + i);
         }
 
         var trackerWrapper = '<div class="progress-tracker-ui">' + html + '</div>';
