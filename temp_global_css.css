@@ -974,7 +974,10 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:focus-within:
 }
 
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit {
+    border: none;
     margin: 0px;
+    padding: 0px;
+    text-align: unset;
 }
 .ProcessForm .secure-container {
     display: flex;

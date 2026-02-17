@@ -348,11 +348,6 @@ $(document).ready(function($) {
             var $backDiv = $('<div class="en__back"></div>').append($backBtn);
             
             $('.en__submit__container').prepend($backDiv);
-    
-            $backBtn.on('click', function(e) {
-                e.preventDefault();
-                //window.history.back();
-            });
 
             // 3. GENERATE THE BACK URL
             var currentUrl = window.location.href;
@@ -374,10 +369,12 @@ $(document).ready(function($) {
                 
                 // Rejoin the parts and add the ?chain parameter
                 var prevUrl = parts.join('/') + '?chain';
-
-                // 4. Create the Back Link HTML
-                $backBtn.wrap('<a href="' + prevUrl + '" />');
             }
+
+            $backBtn.on('click', function(e) {
+                e.preventDefault();
+                window.location.href = prevUrl;
+            });
         }
 
         if($('.en__MultiStep_Form').length > 0 && $('.en__back').length === 0) {
