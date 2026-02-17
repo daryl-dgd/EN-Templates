@@ -679,6 +679,7 @@ form .ProcessForm {
     border: 1px solid var(--paletteColor1);
     height: auto;
     font-family: var(--fontFamilyButton);
+    position: relative;
 }
 
 .ProcessForm .en__submit button:before,
@@ -716,6 +717,8 @@ form .ProcessForm {
     color: var(--paletteColor1);
     opacity: 1;
 }
+
+
 
 .ProcessForm .en__captcha {
     padding: 25px 0px 0px;
@@ -876,12 +879,16 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step {
     font-size: 18px;
     font-family: var(--fontFamilySecondary);
     font-weight: 700;
+    cursor: default;
 }
 body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step.active,
 body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step.completed {
     background-color: var(--paletteColor1);
     border-color: var(--paletteColor1);
     color: var(--black);
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step.completed {
+    opacity: 50%;
 }
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field.en__field--donationAmt {
     margin: 0px 0px 16px;
@@ -913,11 +920,61 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .en__field--recurrpay .en__fie
 .monthly-cta-container .monthly-cta-text {
     margin-bottom: 0px;
 }
-body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit {
-    border: none;
+
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
     margin: 16px 0px;
-    padding: 0px;
-	text-align: unset;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit__container .en__back,
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit__container .en__submit {
+    width: 100%;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button {
+    display: block;
+    background: var(--white);
+    color: var(--black);
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    border: 1px solid var(--paletteColor6);
+    height: auto;
+    font-family: var(--fontFamilyButton);
+    position: relative;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:before {
+    content: "\f060";
+    color: var(--paletteColor1);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:hover,
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:focus,
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:focus-visible,
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:focus-within {
+    background: var(--white);
+    border: 1px solid var(--black);
+}
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:hover:before,
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:focus:before,
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:focus-visible:before,
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__back button:focus-within:before {
+    opacity: 1;
+    color: var(--paletteColor1);
+}
+
+body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit {
+    margin: 0px;
 }
 .ProcessForm .secure-container {
     display: flex;

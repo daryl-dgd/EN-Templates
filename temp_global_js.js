@@ -332,6 +332,57 @@ $(document).ready(function($) {
             // 5. Start Observing
             observer.observe(targetNode, config);
         }
+
+        //Multi-step Back button
+        function addBackButton() {
+            var $submitDiv = $('.en__submit');
+        
+            $submitDiv.wrap('<div class="en__submit__container"></div>');
+    
+            var $nextBtn = $submitDiv.find('button');
+            var $backBtn = $nextBtn.clone();
+    
+            $backBtn.text('Back');
+            $backBtn.attr('type', 'button');
+    
+            var $backDiv = $('<div class="en__back"></div>').append($backBtn);
+            
+            $('.en__submit__container').prepend($backDiv);
+    
+            $backBtn.on('click', function(e) {
+                e.preventDefault();
+                //window.history.back();
+            });
+
+            // 3. GENERATE THE BACK URL
+            var currentUrl = window.location.href;
+            // Remove any existing query strings (like ?mode=demo) to work with a clean path
+            var cleanUrl = currentUrl.split('?')[0]; 
+            
+            // Split by '/' to get segments: ["https:", "", "donate.accion.org", "page", "92979", "donate", "2"]
+            var parts = cleanUrl.split('/');
+            
+            // The page number is usually the very last part of the path
+            var pageNumIndex = parts.length - 1;
+            var currentPageNum = parseInt(parts[pageNumIndex]);
+
+            // Validate that we found a number (just in case URL structure is weird)
+            if (!isNaN(currentPageNum) && currentPageNum > 1) {
+                
+                // Decrement the page number
+                parts[pageNumIndex] = currentPageNum - 1;
+                
+                // Rejoin the parts and add the ?chain parameter
+                var prevUrl = parts.join('/') + '?chain';
+
+                // 4. Create the Back Link HTML
+                $backBtn.wrap('<a href="' + prevUrl + '" />');
+            }
+        }
+
+        if($('.en__MultiStep_Form').length > 0 && $('.en__back').length === 0) {
+            addBackButton();
+        }
     
     } else if ($('.page-ty').length > 0){
         //Thank You Page
