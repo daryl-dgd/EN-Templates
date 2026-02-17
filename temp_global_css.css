@@ -416,7 +416,7 @@ form .ProcessForm {
 .ProcessForm .donor-info {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 24px;
 }
 
 .ProcessForm .donor-info .en__field {
@@ -426,9 +426,17 @@ form .ProcessForm {
     padding: 0px;
 }
 
-.ProcessForm .donor-info:first-child .en__field:first-child {
-    margin-top: 0px;
+.ProcessForm .donor-info .en__field.en__field--title {
+    max-width: 108px;
 }
+
+.ProcessForm .donor-info .en__field.en__field--title #en__field_supporter_title {
+    line-height: normal;
+}
+
+/*.ProcessForm .donor-info:first-child .en__field:first-child {
+    margin-top: 0px;
+}*/
 
 .ProcessForm .donor-info .en__field .en__field__element {
     display: block;
