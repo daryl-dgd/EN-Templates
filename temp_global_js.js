@@ -71,6 +71,8 @@ $(document).ready(function($) {
                 : '<span class="step-number">' + i + '</span>';
 
             html += '<div class="step ' + statusClass + '">' + stepContent + '</div>';
+
+            $('body').addClass("page-" + i);
         }
 
         var trackerWrapper = '<div class="progress-tracker-ui">' + html + '</div>';
@@ -349,26 +351,20 @@ $(document).ready(function($) {
             
             $('.en__submit__container').prepend($backDiv);
 
-            // 3. GENERATE THE BACK URL
+            // GENERATE THE BACK URL
             var currentUrl = window.location.href;
-            // Remove any existing query strings (like ?mode=demo) to work with a clean path
             var cleanUrl = currentUrl.split('?')[0]; 
-            
-            // Split by '/' to get segments: ["https:", "", "donate.accion.org", "page", "92979", "donate", "2"]
             var parts = cleanUrl.split('/');
-            
-            // The page number is usually the very last part of the path
             var pageNumIndex = parts.length - 1;
             var currentPageNum = parseInt(parts[pageNumIndex]);
 
-            // Validate that we found a number (just in case URL structure is weird)
             if (!isNaN(currentPageNum) && currentPageNum > 1) {
-                
-                // Decrement the page number
                 parts[pageNumIndex] = currentPageNum - 1;
-                
-                // Rejoin the parts and add the ?chain parameter
                 var prevUrl = parts.join('/') + '?chain';
+            }
+
+            if (window.location.href.indexOf('mode=DEMO') > -1) {
+                prevUrl += '&mode=DEMO';
             }
 
             $backBtn.on('click', function(e) {

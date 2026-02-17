@@ -979,6 +979,9 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .en__submit {
     padding: 0px;
     text-align: unset;
 }
+body.en__Donation.en__MultiStep_Form.page-1 .ProcessForm .en__submit__container .en__back {
+    display: none !important;
+}
 .ProcessForm .secure-container {
     display: flex;
     align-items: center;
