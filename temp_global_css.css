@@ -877,11 +877,11 @@ body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step {
     font-family: var(--fontFamilySecondary);
     font-weight: 700;
 }
-body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step.active {
+body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step.active,
+body.en__Donation.en__MultiStep_Form .ProcessForm .progress-tracker-ui .step.completed {
     background-color: var(--paletteColor1);
     border-color: var(--paletteColor1);
     color: var(--black);
-    cursor: pointer;
 }
 body.en__Donation.en__MultiStep_Form .ProcessForm .en__field.en__field--donationAmt {
     margin: 0px 0px 16px;
