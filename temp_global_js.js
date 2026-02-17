@@ -1,10 +1,10 @@
 $(document).ready(function($) {
     //Add link to header logo
-    var $headerLogo = $('.custom-header img.headerLogo').first();
+    /*var $headerLogo = $('.custom-header img.headerLogo').first();
 
     if ($headerLogo.length) {
         $headerLogo.wrapAll($('<a href="https://www.accion.org/" target="_blank" />'));
-    }
+    }*/
 
     //Add body classes
     if($('.en__Donation').length > 0){
