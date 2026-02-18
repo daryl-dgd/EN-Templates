@@ -410,6 +410,39 @@ $(document).ready(function($) {
             });
         }
 
+        function coverFeeTooltip() {
+            var $feeLabel = $('.en__field__label').filter(function() {
+                return $(this).text().indexOf('Cover transaction costs') > -1;
+            });
+        
+            if ($feeLabel.length > 0 && $('.fee-info-icon').length === 0) {
+                var tooltipHtml = '<span class="fee-info-icon"><i class="fa-regular fa-circle-question"></i></span>' +
+                                '<div class="fee-info-tooltip" style="display: none;">' +
+                                    'By covering the transaction costs, you ensure that 100% of your donation goes directly toward our mission.' +
+                                '</div>';
+        
+                $feeLabel.append(tooltipHtml);
+        
+                $('.fee-info-icon').on('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    $('.fee-info-tooltip').fadeToggle(200);
+                });
+                
+                $('.fee-info-tooltip').on('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+        
+                $(document).on('click', function(e) {
+                    if (!$(e.target).closest('.fee-info-icon, .fee-info-tooltip').length) {
+                        $('.fee-info-tooltip').fadeOut(200);
+                    }
+                });
+            }
+        }
+
         if($('.en__MultiStep_Form').length > 0 && $('.en__back').length === 0) {
             addBackButton();
         }
@@ -417,6 +450,7 @@ $(document).ready(function($) {
         if ($('body.page-4').length > 0) {
             setTimeout(function(){
                 customTotal();
+                coverFeeTooltip();
             },200);
         }
     

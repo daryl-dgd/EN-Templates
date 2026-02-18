@@ -299,6 +299,47 @@ form .ProcessForm {
     max-width: inherit;
 }*/
 
+.ProcessForm .fee-info-icon {
+    color: var(--paletteColor6);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.ProcessForm .fee-info-icon:hover {
+    color: var(--paletteColor2);
+}
+
+.ProcessForm .fee-info-tooltip {
+    position: absolute;
+    left: 100%; 
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 15px;
+    background-color: var(--paletteColor4);
+    color: var(--white);
+    padding: 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.4;
+    width: 220px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-weight: normal; 
+    cursor: default;
+}
+
+.ProcessForm .fee-info-tooltip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent var(--paletteColor4) transparent transparent;
+}
+
 .ProcessForm .en__field--dirgift>label {
     display: block;
     width: 100%;
@@ -1256,6 +1297,17 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
     }
     .digital-wallet-divider {
         margin: 24px 0px;
+    }
+    .ProcessForm .fee-info-tooltip {
+        left: 0;
+        top: 100%;
+        transform: none;
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .ProcessForm .fee-info-tooltip::before {
+        display: none;
     }
     .footer-top {
         padding: 20px 0px;
