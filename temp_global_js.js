@@ -296,7 +296,9 @@ $(document).ready(function($) {
         function customTotal() {
             if ($('.custom-total-display').length === 0) {
 
-                var totalHtml = '<div class="custom-total-display"><div class="totals-label"><p><span class="total-label">Total</span></p></div><div class="totals-output"><p><span class="totalAmount"></span><span class="monthly-toggle hidden">/Month</span><span> USD</span></p></div></div>';
+                var totalHtml = '<div class="custom-total-display hidden"><div class="totals-label"><p><span class="total-label">Total</span></p></div><div class="totals-output"><p><span class="totalAmount"></span><span class="monthly-toggle hidden">/Month</span><span> USD</span></p></div></div>';
+
+                $('.en__submit__container').before(totalHtml);
 
                 var latestTotal = getTotalAmountText();
                 console.log('latestTotal:', latestTotal);
@@ -306,8 +308,8 @@ $(document).ready(function($) {
                 if (getRecurring == "Y") {
                     $('.monthly-toggle').removeClass("hidden");
                 }
-                
-                $('.en__submit__container').before(totalHtml);
+
+                $('.custom-total-display').removeClass("hidden");
             }
         }
 		
