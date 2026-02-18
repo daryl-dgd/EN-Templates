@@ -413,7 +413,9 @@ $(document).ready(function($) {
         }
 
         if ($('body.page-4').length > 0) {
-            customTotal();
+            setTimeout(function(){
+                customTotal();
+            },200);
         }
     
     } else if ($('.page-ty').length > 0){
