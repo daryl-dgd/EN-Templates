@@ -301,7 +301,7 @@ $(document).ready(function($) {
                 var totalHtml = '<div class="custom-total-display">' +
                                     '<span class="total-label">Total</span>' +
                                     // We wrap just the amount in an ID so we can update it easily later
-                                    '<span class="totalAmount"></span>' + '</span> USD</span>' +
+                                    '<span class="totalAmount"></span>' + '<span> USD</span>' +
                                     //'<span class="total-value"><span id="live-total-amount">' + initialAmount + '</span> USD</span>' +
                                 '</div>';
 
