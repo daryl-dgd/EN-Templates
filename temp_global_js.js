@@ -338,16 +338,16 @@ $(document).ready(function($) {
         }
 
         //Tribute Banner
-        var savedType = sessionStorage.getItem('tribute_type');
-        var savedName = sessionStorage.getItem('tribute_name');
+        if ($('.tribute-info-container').length > 0){
+            var savedType = sessionStorage.getItem('tribute_type');
+            var savedName = sessionStorage.getItem('tribute_name');
 
-        if (savedType && savedName) {
-            var displayType = (savedType.toLowerCase().indexOf('memory') > -1) ? 'In memory' : 'In honor';
+            if (savedType && savedName) {
+                $('.tribute-reason').html(savedType);
+                $('.tribute-name').html(savedName);
 
-            $('.tribute-reason').html(displayType);
-            $('.tribute-name').html(savedName);
-
-            $('.tribute-info-container').removeClass("en__hidden");
+                $('.tribute-info-container').removeClass("en__hidden");
+            }
         }
 
         //Multi-step Back button
@@ -460,7 +460,7 @@ window.enOnSubmit = function() {
         if ($('body.page-1').length > 0) {
             var isTribute = $('#en__field_transaction_inmem:checked').val();
             var tributeType = $('#en__field_transaction_trbopts').val();
-            var honoreeName = $('#en__field_transaction_honname"]').val();
+            var honoreeName = $('#en__field_transaction_honname').val();
 
             if (isTribute) {
                 sessionStorage.setItem('tribute_type', tributeType);
