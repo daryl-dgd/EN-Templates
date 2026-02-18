@@ -289,7 +289,7 @@ form .ProcessForm {
     padding: 6px 0px;
 }
 
-.ProcessForm label[for="en__field_transaction_feeCover"] {
+/*.ProcessForm label[for="en__field_transaction_feeCover"] {
     white-space: normal;
     margin-bottom: 0px;
     font-weight: 700;
@@ -297,7 +297,7 @@ form .ProcessForm {
     line-height: 1.5;
     display: inline;
     max-width: inherit;
-}
+}*/
 
 .ProcessForm .en__field--dirgift>label {
     display: block;
@@ -659,7 +659,7 @@ form .ProcessForm {
 
 .ProcessForm .donor-info .en__field--ccexpire .en__field__element--splitselect {
     display: flex;
-    gap: 10px;
+    gap: 24px;
 }
 
 .ProcessForm .en__field--ccexpire .en__field__element--splitselect>.en__field__item {
@@ -741,7 +741,8 @@ form .ProcessForm {
 
 
 .ProcessForm .en__captcha {
-    padding: 25px 0px 0px;
+    margin: 16px 0px 0px;
+    padding: 0px;
 }
 
 /* Footer */
