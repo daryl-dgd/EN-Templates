@@ -856,7 +856,8 @@ form .ProcessForm {
     font-size: 1em;
 }
 
-.en__submit button:disabled,
+
+/*.en__submit button:disabled,
 .en__submit button:disabled:hover,
 .en__submit button:disabled:focus,
 .en__submit button:disabled:focus-within {
@@ -864,7 +865,7 @@ form .ProcessForm {
     color: #fff;
     border-color: #999999;
     cursor: default;
-}
+}*/
 
 /*Thank You Page*/
 .transaction-details {
@@ -1282,6 +1283,12 @@ body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no butto
     color: var(--paletteColor1);
 }
 
+/* Hidden Opt-Ins */
+.ProcessForm .en__field .en__field--fundraising-opt-in,
+.ProcessForm .en__field .en__field--newsletter-opt-in {
+    display: none !important;
+}
+
 /* Campaign Form Overrides */
 body.en__Donation.en__Campaign_Form .hero-banner {
     background-color: #f5f5f5;
@@ -1396,6 +1403,9 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
     body.en__Donation.en__MultiStep_Form .ProcessForm {
         width: 100%;
         min-width: unset;
+    }
+    body.en__Donation.en__MultiStep_Form:not(.page-1) .ProcessFormIntro {
+        display: none !important;
     }
     body.en__Donation.en__MultiStep_Form .footer-top {
         padding: 16px 20px 0px;
