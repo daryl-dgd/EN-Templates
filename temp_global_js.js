@@ -247,9 +247,9 @@ $(document).ready(function($) {
 
         //Add blank options to beginning of dropdowns
         $('#en__field_transaction_trbopts').prepend('<option value="" disabled selected></option>');
-        $('#en__field_transaction_infreg').prepend('<option value="" disabled selected></option>');
+        $('#en__field_transaction_infreg').prepend('<option value="" disabled selected>Select</option>');
         $('#en__field_supporter_title').prepend('<option value="" disabled selected></option>');
-        $('#en__field_supporter_region').prepend('<option value="" disabled selected></option>');
+        $('#en__field_supporter_region').prepend('<option value="" disabled selected>Select</option>');
 		
 		//eCard customizations
 		$('.eCard-message').parent().addClass('eCard-message-container');
