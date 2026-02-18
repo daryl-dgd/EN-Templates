@@ -1284,8 +1284,8 @@ body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no butto
 }
 
 /* Hidden Opt-Ins */
-.ProcessForm .en__field .en__field--fundraising-opt-in,
-.ProcessForm .en__field .en__field--newsletter-opt-in {
+.ProcessForm .en__field.en__field--fundraising-opt-in,
+.ProcessForm .en__field.en__field--newsletter-opt-in {
     display: none !important;
 }
 
