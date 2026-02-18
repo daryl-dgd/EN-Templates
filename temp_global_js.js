@@ -1,11 +1,4 @@
 $(document).ready(function($) {
-    //Add link to header logo
-    /*var $headerLogo = $('.custom-header img.headerLogo').first();
-
-    if ($headerLogo.length) {
-        $headerLogo.wrapAll($('<a href="https://www.accion.org/" target="_blank" />'));
-    }*/
-
     //Add body classes
     if($('.en__Donation').length > 0){
         $('body').addClass("en__Donation");
@@ -115,9 +108,6 @@ $(document).ready(function($) {
 		$('<p style="font-size: 12px; margin-bottom: 0px; position: absolute; bottom: -15px; left: 0;">Minimum donation of $5.00</p>').appendTo('.other-amt-input');
 
         $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
-        
-        //Add objects for $ amount and Monthly to the submit button
-        //$('.en__submit button').append(" <span class='totalAmount'></span><span class='monthlyToggle'> Monthly</span>");
 
         // A master function to restore ALL visual states
         function restoreDonationState() {
@@ -302,6 +292,26 @@ $(document).ready(function($) {
 
         $('#en__field_supporter_country').prepend(blankCountry);
         $('#en__field_supporter_country').val(1);
+
+        //Add objects for $ amount and Monthly to the submit button
+        if ($('body.page-4').length > 0) {
+            //$('.en__submit button').append(" <span class='totalAmount'></span><span class='monthlyToggle'> Monthly</span>");
+
+            if ($('.custom-total-display').length === 0) {
+                var totalHtml = '<div class="custom-total-display">' +
+                                    '<span class="total-label">Total</span>' +
+                                    // We wrap just the amount in an ID so we can update it easily later
+                                    '<span class="totalAmount"></span>' + '</span> USD</span>' +
+                                    //'<span class="total-value"><span id="live-total-amount">' + initialAmount + '</span> USD</span>' +
+                                '</div>';
+
+                var latestTotal = getTotalAmountText();
+                console.log('latestTotal:', latestTotal);
+                $('.totalAmount').text(latestTotal);
+                
+                $('.en__submit__container').before(totalHtml);
+            }
+        }
 		
 		$(document).on('change', '#en__field_transaction_feeCover', function () {
 			syncTotalAmount(150);
