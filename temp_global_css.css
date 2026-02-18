@@ -1032,6 +1032,31 @@ body.en__Donation.en__MultiStep_Form .tribute-info-container p {
     margin-bottom: 0px;
 }
 
+.ProcessForm #en__digitalWallet .en__digitalWallet__container {
+    margin: 0px auto !important;
+}
+.digital-wallet-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 44px 0px 24px;
+    color: var(--black);
+    font-weight: 700;
+    font-family: var(--fontFamilyButton);
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 150%;
+}
+.digital-wallet-divider::before,
+.digital-wallet-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--black);
+}
+.digital-wallet-divider span {
+    padding: 0px 24px;
+}
+
 /* Campaign Form Overrides */
 body.en__Donation.en__Campaign_Form .hero-banner {
     background-color: #f5f5f5;
@@ -1215,6 +1240,9 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
     }
     body.en__Donation.en__MultiStep_Form .ProcessForm .en__field.en__field--donationAmt {
         margin: 16px 0px;
+    }
+    .digital-wallet-divider {
+        margin: 24px 0px;
     }
     .footer-top {
         padding: 20px 0px;
