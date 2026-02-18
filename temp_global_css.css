@@ -1111,6 +1111,38 @@ body.en__Donation.en__MultiStep_Form .tribute-info-container p {
     padding: 0px 24px;
 }
 
+/* Multi-Step Confirmation Page (Redirect) */
+body.en__Donation.en__MultiStep_Form.page-5 main {
+    min-height: unset;
+}
+body.en__Donation.en__MultiStep_Form.page-5 form.en__component--page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+body.en__Donation.en__MultiStep_Form.page-5 .en__component--advrow.custom-header,
+body.en__Donation.en__MultiStep_Form.page-5 .footer-top,
+body.en__Donation.en__MultiStep_Form.page-5 .footer-inner {
+    flex-shrink: 0;
+}
+body.en__Donation.en__MultiStep_Form.page-5 .en__component--advrow.en__Donation {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+}
+body.en__Donation.en__MultiStep_Form.page-5 .ProcessForm {
+    padding: 0px;
+    background: none;
+    text-align: center;
+}
+body.en__Donation.en__MultiStep_Form.page-5 .ProcessForm .confirmation-spinner .fa-solid.fa-circle-notch {
+    color: var(--white);
+    font-size: 60px;
+}
+
 /* Upsell Lightbox */
 body.en__Donation.en__MultiStep_Form #en__upsellModal .en__upsellModal__container {
     display: flex !important;
