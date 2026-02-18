@@ -988,6 +988,21 @@ body.en__Donation.en__MultiStep_Form.page-1 .ProcessForm .en__submit__container 
     justify-content: flex-start;
     gap: 16px;
 }
+body.en__Donation.en__MultiStep_Form .tribute-info-container {
+    padding: 12px;
+    text-align: center;
+    background-color: var(--paletteColor4);
+    color: var(--white);
+    margin: -60px -60px 50px;
+    font-size: 16px;
+    font-family: var(--fontFamilyButton);
+    text-transform: uppercase;
+}
+body.en__Donation.en__MultiStep_Form .tribute-info-container p {
+    color: var(--white);
+    margin: 0px;
+    font-weight: 700;
+}
 
 .ProcessForm .secure-container img {
     display: block;

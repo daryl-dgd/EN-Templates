@@ -338,7 +338,7 @@ $(document).ready(function($) {
         }
 
         //Tribute Banner
-        if ($('.tribute-info-container').length > 0){
+        if ($('.tribute-info-container').length > 0) {
             var savedType = sessionStorage.getItem('tribute_type');
             var savedName = sessionStorage.getItem('tribute_name');
 
@@ -455,8 +455,6 @@ window.enOnValidate = function(){
 
 window.enOnSubmit = function() {
     return new Promise(function(resolve, reject) {
-        var isLastPage = $('.en__submit__container').length > 0;
-
         if ($('body.page-1').length > 0) {
             var isTribute = $('#en__field_transaction_inmem:checked').val();
             var tributeType = $('#en__field_transaction_trbopts').val();
@@ -467,8 +465,7 @@ window.enOnSubmit = function() {
                 sessionStorage.setItem('tribute_name', honoreeName);
             }
         }
-
-        if (isLastPage) {
+        else if ($('body.page-4').length > 0) {
             var spinner = '<i class="fa-solid fa-spinner fa-spin-pulse"></i>';
        
             $('.en__submit button').text("Processing ");
