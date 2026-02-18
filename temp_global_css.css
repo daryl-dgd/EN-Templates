@@ -15,9 +15,12 @@ body {
     background-attachment: fixed;
 }
 
-body.custom-bg-active {
+/*body.custom-bg-active {
     background-color: var(--custom-bg-color, #ffffff);
     background-image: var(--custom-bg-image, none);
+}*/
+body.bg-gradient-dark-green {
+    background: linear-gradient(to bottom, #131B19, #12534E);
 }
 
 .en__hidden {
@@ -777,6 +780,30 @@ form .ProcessForm {
 .ProcessForm button.en__submit:focus-visible:before {
     color: var(--paletteColor1);
     opacity: 1;
+}
+
+.ProcessForm .en__submit.en__submit--disabled button,
+.ProcessForm .en__submit.en__submit--disabled button:hover,
+.ProcessForm .en__submit.en__submit--disabled button:focus,
+.ProcessForm .en__submit.en__submit--disabled button:focus-visible,
+.ProcessForm .en__submit.en__submit--disabled button:focus-within {
+    display: block;
+    background: var(--paletteColor1);
+    color: var(--black);
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    border: 1px solid var(--paletteColor1);
+    height: auto;
+    font-family: var(--fontFamilyButton);
+    position: relative;
+
+    opacity: 50%;
 }
 
 .ProcessForm .en__captcha {

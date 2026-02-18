@@ -35,6 +35,11 @@ $(document).ready(function($) {
         $('body').addClass("en__Static");
     }
 
+    // Style background gradient
+    if ($('.bg-gradient-dark-green').length > 0) {
+        $('body').addClass("bg-gradient-dark-green");
+    }
+
     /* Progress Tracker */
     var $trackerContainer = $('.progress-tracker-container');
     
@@ -473,7 +478,7 @@ $(document).ready(function($) {
     }
 });
 
-(function() {
+/*(function() {
     function setCustomBackground() {
         const configEl = document.querySelector('.en-bg-config');
         
@@ -507,7 +512,7 @@ $(document).ready(function($) {
     } else {
         setCustomBackground();
     }
-})();
+})();*/
 
 //Error Handling
 window.enOnValidate = function(){
