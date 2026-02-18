@@ -1130,7 +1130,10 @@ body.en__Donation.en__MultiStep_Form #en__upsellModal .en__upsellModal__backgrou
 body.en__Donation.en__MultiStep_Form #en__upsellModal .en__upsellModal__content {
     min-width: 0 !important;
     padding: 32px;
-    text-align: center;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal .en__upsellModal__content p {
+    font-size: 20px;
+    line-height: 150%;
 }
 body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__close {
     top: 24px;
@@ -1157,8 +1160,10 @@ body.en__Donation.en__MultiStep_Form #en__upsellModal__buttons {
     gap: 16px;
     align-items: center;
 }
-body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes {
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no {
     margin: 0px;
+    width: 100%;
 }
 body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button {
     display: block;
@@ -1170,12 +1175,13 @@ body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes butt
     line-height: 21px;
     font-weight: 700;
     width: 100%;
-    max-width: 280px;
+    max-width: 100%;
     padding: 12px;
     border: 1px solid var(--paletteColor1);
     height: auto;
     font-family: var(--fontFamilyButton);
     position: relative;
+    text-transform: uppercase;
 }
 body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:before {
     content: "\f061";
@@ -1212,7 +1218,7 @@ body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no butto
     line-height: 21px;
     font-weight: 700;
     width: 100%;
-    max-width: 280px;
+    max-width: 100%;
     padding: 12px;
     border: 1px solid var(--paletteColor6);
     height: auto;
