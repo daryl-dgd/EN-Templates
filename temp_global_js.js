@@ -293,21 +293,19 @@ $(document).ready(function($) {
         $('#en__field_supporter_country').prepend(blankCountry);
         $('#en__field_supporter_country').val(1);
 
-        //Add objects for $ amount and Monthly to the submit button
-        //$('.en__submit button').append(" <span class='totalAmount'></span><span class='monthlyToggle'> Monthly</span>");
-
         function customTotal() {
             if ($('.custom-total-display').length === 0) {
-                /*var totalHtml = '<div class="custom-total-display">' +
-                                    '<span class="total-label">Total</span>' +
-                                    '<span class="totalAmount"></span>' + '<span> USD</span>' +
-                                '</div>';*/
 
-                var totalHtml = '<div class="custom-total-display"><div class="totals-label"><p><span class="total-label">Total</span></p></div><div class="totals-output"><p><span class="totalAmount">$11.22</span><span> USD</span></p></div></div>';
+                var totalHtml = '<div class="custom-total-display"><div class="totals-label"><p><span class="total-label">Total</span></p></div><div class="totals-output"><p><span class="totalAmount"></span><span class="monthly-toggle hidden">/Month</span><span> USD</span></p></div></div>';
 
                 var latestTotal = getTotalAmountText();
                 console.log('latestTotal:', latestTotal);
                 $('.totalAmount').text(latestTotal);
+
+                var getRecurring = sessionStorage.getItem('recurring_val');
+                if (getRecurring == "Y") {
+                    $('.monthly-toggle').removeClass("hidden");
+                }
                 
                 $('.en__submit__container').before(totalHtml);
             }
@@ -482,9 +480,12 @@ window.enOnValidate = function(){
 window.enOnSubmit = function() {
     return new Promise(function(resolve, reject) {
         if ($('body.page-1').length > 0) {
+            var isRecurring = $('input[name="transaction.recurrpay"]:checked').val();
             var isTribute = $('#en__field_transaction_inmem:checked').val();
             var tributeType = $('#en__field_transaction_trbopts').val();
             var honoreeName = $('#en__field_transaction_honname').val();
+
+            sessionStorage.setItem('recurring_val', isRecurring);
 
             if (isTribute) {
                 sessionStorage.setItem('tribute_type', tributeType);
