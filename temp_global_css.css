@@ -1111,6 +1111,139 @@ body.en__Donation.en__MultiStep_Form .tribute-info-container p {
     padding: 0px 24px;
 }
 
+/* Upsell Lightbox */
+body.en__Donation.en__MultiStep_Form #en__upsellModal .en__upsellModal__container {
+    display: flex !important;
+    flex-direction: column;
+    max-width: 600px !important; 
+    width: 100%;
+    margin: auto;
+    border-radius: 0px;
+    overflow: hidden;
+    border: none;
+    background-color: var(--white);
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal .en__upsellModal__background {
+    width: 100%;
+    height: 280px;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal .en__upsellModal__content {
+    min-width: 0 !important;
+    padding: 32px;
+    text-align: center;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__close {
+    top: 24px;
+    right: 24px;
+    background-color: var(--white);
+    opacity: 1;
+    width: 36px;
+    height: 36px;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__close:after, 
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__close:before {
+    background-color: var(--black);
+    content: " ";
+    height: 15px;
+    left: 17px;
+    top: 10px;
+    position: absolute;
+    width: 2px;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    align-items: center;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes {
+    margin: 0px;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button {
+    display: block;
+    background: var(--paletteColor1);
+    color: var(--black);
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+    width: 100%;
+    max-width: 280px;
+    padding: 12px;
+    border: 1px solid var(--paletteColor1);
+    height: auto;
+    font-family: var(--fontFamilyButton);
+    position: relative;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:before {
+    content: "\f061";
+    color: var(--paletteColor1);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+}
+
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:hover,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:focus,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:focus-within,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:focus-visible {
+    background: var(--white);
+    border: 1px solid var(--paletteColor1);
+    color: var(--black);
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:hover:before,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:focus:before,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:focus-within:before,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__yes button:focus-visible:before {
+    color: var(--paletteColor1);
+    opacity: 1;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button {
+    display: block;
+    background: var(--white);
+    color: var(--black);
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+    width: 100%;
+    max-width: 280px;
+    padding: 12px;
+    border: 1px solid var(--paletteColor6);
+    height: auto;
+    font-family: var(--fontFamilyButton);
+    position: relative;
+}
+
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button:before {
+    content: "\f061";
+    color: var(--paletteColor1);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button:hover,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button:focus,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button:focus-visible,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button:focus-within {
+    background: var(--white);
+    border: 1px solid var(--black);
+}
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button:hover:before,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button:focus:before,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button:focus-visible:before,
+body.en__Donation.en__MultiStep_Form #en__upsellModal #en__upsellModal__no button:focus-within:before {
+    opacity: 1;
+    color: var(--paletteColor1);
+}
+
 /* Campaign Form Overrides */
 body.en__Donation.en__Campaign_Form .hero-banner {
     background-color: #f5f5f5;
