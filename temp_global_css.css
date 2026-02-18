@@ -628,13 +628,33 @@ form .ProcessForm {
     border-bottom: 1px solid #e5e5e5;
 }
 
-.ProcessForm .en__field--paymenttype {
+/*.ProcessForm .en__field--paymenttype {
     display: none;
-}
+}*/
 
 .ProcessForm .en__field__element--vgs,
 .ProcessForm #en__field_transaction_ccnumber {
     width: 100%;
+}
+
+.ProcessForm #en__field_transaction_ccnumber,
+.ProcessForm #en__field_transaction_ccvv {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 1.6rem;
+    min-height: 40px;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--black);
+    padding: 12px;
+    font-family: var(--fontFamilyButton);
+    color: var(--black);
+    min-height: 47px;
 }
 
 .ProcessForm .donor-info .en__field--ccexpire .en__field__element--splitselect {
@@ -1052,6 +1072,9 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
         min-width: 560px;
         padding: 24px;
     }
+    body.en__Donation.en__MultiStep_Form .tribute-info-container {
+        margin: -24px -24px 24px;
+    }
 }
 @media (max-width: 1200px) {
     .main-container {
@@ -1173,6 +1196,9 @@ body.en__Donation.en__Campaign_Form .ProcessForm .en__field__item.en__field__ite
     }
     body.en__Donation.en__MultiStep_Form .ProcessForm {
         padding: 20px;
+    }
+    body.en__Donation.en__MultiStep_Form .tribute-info-container {
+        margin: -20px -20px 24px;
     }
     body.en__Donation.en__MultiStep_Form .ProcessForm .page-step-container {
         flex-direction: column-reverse;

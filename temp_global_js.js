@@ -243,6 +243,8 @@ $(document).ready(function($) {
         $('.en__field--phoneNumber').wrap($('<div class="donor-info"/>'));
 
         //Wrap Payment fields (3)
+        $('.en__field--paymenttype').wrap($('<div class="donor-info"/>'));
+        $('.en__field--ccnumber').wrap($('<div class="donor-info"/>'));
         $('.en__field--ccexpire').wrap($('<div class="donor-info"/>'));
         $('.en__field--ccvv').wrap($('<div class="donor-info"/>'));
 
