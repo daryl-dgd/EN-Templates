@@ -738,11 +738,23 @@ form .ProcessForm {
     opacity: 1;
 }
 
-
-
 .ProcessForm .en__captcha {
     margin: 16px 0px 0px;
     padding: 0px;
+}
+
+.ProcessForm .custom-total-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 16px 0px 0px;
+}
+.ProcessForm .custom-total-display p {
+    margin-bottom: 0px;
+}
+.ProcessForm .custom-total-display .totals-output p {
+    font-weight: 700;
 }
 
 /* Footer */

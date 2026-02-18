@@ -294,16 +294,16 @@ $(document).ready(function($) {
         $('#en__field_supporter_country').val(1);
 
         //Add objects for $ amount and Monthly to the submit button
-        if ($('body.page-4').length > 0) {
-            //$('.en__submit button').append(" <span class='totalAmount'></span><span class='monthlyToggle'> Monthly</span>");
+        //$('.en__submit button').append(" <span class='totalAmount'></span><span class='monthlyToggle'> Monthly</span>");
 
+        function customTotal() {
             if ($('.custom-total-display').length === 0) {
-                var totalHtml = '<div class="custom-total-display">' +
+                /*var totalHtml = '<div class="custom-total-display">' +
                                     '<span class="total-label">Total</span>' +
-                                    // We wrap just the amount in an ID so we can update it easily later
                                     '<span class="totalAmount"></span>' + '<span> USD</span>' +
-                                    //'<span class="total-value"><span id="live-total-amount">' + initialAmount + '</span> USD</span>' +
-                                '</div>';
+                                '</div>';*/
+
+                var totalHtml = '<div class="custom-total-display"><div class="totals-label"><p><span class="total-label">Total</span></p></div><div class="totals-output"><p><span class="totalAmount">$11.22</span><span> USD</span></p></div></div>';
 
                 var latestTotal = getTotalAmountText();
                 console.log('latestTotal:', latestTotal);
@@ -412,6 +412,10 @@ $(document).ready(function($) {
 
         if($('.en__MultiStep_Form').length > 0 && $('.en__back').length === 0) {
             addBackButton();
+        }
+
+        if ($('body.page-4').length > 0) {
+            customTotal();
         }
     
     } else if ($('.page-ty').length > 0){
