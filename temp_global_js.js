@@ -246,11 +246,12 @@ $(document).ready(function($) {
 
 
         //Add blank options to beginning of dropdowns
-        var blankTitle = $('<option></option>').attr('value', '').text('');
+        
+        /*var blankTitle = $('<option></option>').attr('value', '').text('');
         var blankHonorGift = $('<option></option>').attr('value', '').text('');
         var blankHonoree = $('<option></option>').attr('value', '').text('');
         var blankRegion = $('<option></option>').attr('value', '').text('');
-        var blankCountry = $('<option></option>').attr('value', '').text('');
+        var blankCountry = $('<option></option>').attr('value', '').text('');*/
 		
 		//eCard customizations
 		$('.eCard-message').parent().addClass('eCard-message-container');
@@ -278,7 +279,7 @@ $(document).ready(function($) {
 		toggleEcardMessage();
 				
         // Append the new option to the select element
-        $('#en__field_supporter_title').prepend(blankTitle);
+        /*$('#en__field_supporter_title').prepend(blankTitle);
         $('#en__field_supporter_title').val(1);
 
         $('#en__field_transaction_othamt1').prepend(blankHonorGift);
@@ -291,7 +292,7 @@ $(document).ready(function($) {
         $('#en__field_supporter_region').val(1);
 
         $('#en__field_supporter_country').prepend(blankCountry);
-        $('#en__field_supporter_country').val(1);
+        $('#en__field_supporter_country').val(1);*/
 
         function customTotal() {
             if ($('.custom-total-display').length === 0) {
