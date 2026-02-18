@@ -453,6 +453,12 @@ $(document).ready(function($) {
                 coverFeeTooltip();
             },200);
         }
+        else if ($('body.page-5').length > 0) {
+            $('.page-step-container').hide();
+
+            var spinner = '<i class="fa-solid fa-circle-notch fa-spin"></i>';
+            $('.confirmation-spinner').append(spinner);
+        }
     
     } else if ($('.page-ty').length > 0){
         //Thank You Page
