@@ -353,11 +353,29 @@ $(document).ready(function($) {
         //Digital Wallet Separator
         var $walletContainer = $('#en__digitalWallet');
         if ($walletContainer.length > 0 && $('.digital-wallet-divider').length === 0) {
-            var dividerHtml = '<div class="digital-wallet-divider">' +
+            var dividerHtml = '<div class="digital-wallet-divider" style="display: none;">' +
                                 '<span>OR PAY BY</span>' +
                             '</div>';
             
             $walletContainer.before(dividerHtml);
+
+            function toggleDivider() {
+                if ($walletContainer.outerHeight() > 10) {
+                    $('.digital-wallet-divider').fadeIn(200);
+                } else {
+                    $('.digital-wallet-divider').hide();
+                }
+            }
+
+            toggleDivider();
+
+            if (window.ResizeObserver) {
+                var resizeObserver = new ResizeObserver(function(entries) {
+                    toggleDivider();
+                });
+                
+                resizeObserver.observe($walletContainer[0]);
+            }
         }
 
         //Multi-step Back button
