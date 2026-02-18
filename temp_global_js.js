@@ -337,6 +337,19 @@ $(document).ready(function($) {
             observer.observe(targetNode, config);
         }
 
+        //Tribute Banner
+        var savedType = sessionStorage.getItem('tribute_type');
+        var savedName = sessionStorage.getItem('tribute_name');
+
+        if (savedType && savedName) {
+            var displayType = (savedType.toLowerCase().indexOf('memory') > -1) ? 'In memory' : 'In honor';
+
+            $('.tribute-reason').html(displayType);
+            $('.tribute-name').html(savedName);
+
+            $('.tribute-info-container').removeClass("en__hidden");
+        }
+
         //Multi-step Back button
         function addBackButton() {
             var $submitDiv = $('.en__submit');
@@ -443,6 +456,17 @@ window.enOnValidate = function(){
 window.enOnSubmit = function() {
     return new Promise(function(resolve, reject) {
         var isLastPage = $('.en__submit__container').length > 0;
+
+        if ($('body.page-1').length > 0) {
+            var isTribute = $('#en__field_transaction_inmem:checked').val();
+            var tributeType = $('#en__field_transaction_trbopts').val();
+            var honoreeName = $('#en__field_transaction_honname"]').val();
+
+            if (isTribute) {
+                sessionStorage.setItem('tribute_type', tributeType);
+                sessionStorage.setItem('tribute_name', honoreeName);
+            }
+        }
 
         if (isLastPage) {
             var spinner = '<i class="fa-solid fa-spinner fa-spin-pulse"></i>';
