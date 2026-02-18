@@ -453,12 +453,28 @@ $(document).ready(function($) {
                 coverFeeTooltip();
             },200);
         }
-        else if ($('body.page-5').length > 0) {
+
+        /* Confirmation Page (Redirect) */
+        var $redirectFlag = $('#en-custom-redirect');
+
+        if ($redirectFlag.length > 0) {
             $('.page-step-container').hide();
 
             var spinner = '<i class="fa-solid fa-circle-notch fa-spin"></i>';
             $('.confirmation-spinner').append(spinner);
+
+            var targetUrl = $redirectFlag.attr('data-url');
+            
+            setTimeout(function() {
+                window.location.replace(targetUrl);
+            }, 1500); 
         }
+        /*else if ($('body.page-5').length > 0) {
+            $('.page-step-container').hide();
+
+            var spinner = '<i class="fa-solid fa-circle-notch fa-spin"></i>';
+            $('.confirmation-spinner').append(spinner);
+        }*/
     
     } else if ($('.page-ty').length > 0){
         //Thank You Page
