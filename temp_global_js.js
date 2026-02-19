@@ -158,6 +158,10 @@ $(document).ready(function($) {
         $(document).on('change', 'input[name="transaction.recurrpay"]', function() {
             $('input[name="transaction.recurrpay"]').parent().removeClass("active");
             $('input[name="transaction.recurrpay"]:checked').parent().addClass("active");
+
+            //Update session variable
+            var isRecurring = $('input[name="transaction.recurrpay"]:checked').val();
+            sessionStorage.setItem('recurring_val', isRecurring);
         });
 
         //Update total amount when other is updated
@@ -337,6 +341,23 @@ $(document).ready(function($) {
             observer.observe(targetNode, config);
         }
 
+        if ($('body.page-1').length > 0) {
+            function syncTributeToSession() {
+                var isTribute = $('#en__field_transaction_inmem:checked').val();
+                var tributeType = $('#en__field_transaction_trbopts').val();
+                var honoreeName = $('#en__field_transaction_honname').val();
+
+                if (isTribute) {
+                    sessionStorage.setItem('tribute_type', tributeType);
+                    sessionStorage.setItem('tribute_name', honoreeName);
+                }
+            }
+
+            $('#en__field_transaction_inmem, #en__field_transaction_trbopts, #en__field_transaction_honname').on('change input', function() {
+                syncTributeToSession();
+            });
+        }
+
         //Tribute Banner
         if ($('.tribute-info-container').length > 0) {
             var savedType = sessionStorage.getItem('tribute_type');
@@ -469,18 +490,14 @@ $(document).ready(function($) {
             var spinner = '<i class="fa-solid fa-circle-notch fa-spin"></i>';
             $('.confirmation-spinner').append(spinner);
 
+            //We should clear the session variables before redirecting
+
             var targetUrl = $redirectFlag.attr('data-url');
             
             setTimeout(function() {
                 window.location.replace(targetUrl);
             }, 1500); 
         }
-        /*else if ($('body.page-5').length > 0) {
-            $('.page-step-container').hide();
-
-            var spinner = '<i class="fa-solid fa-circle-notch fa-spin"></i>';
-            $('.confirmation-spinner').append(spinner);
-        }*/
     
     } else if ($('.page-ty').length > 0){
         //Thank You Page
@@ -496,42 +513,6 @@ $(document).ready(function($) {
     }
 });
 
-/*(function() {
-    function setCustomBackground() {
-        const configEl = document.querySelector('.en-bg-config');
-        
-        if (!configEl) {
-            return;
-        }
-
-        const body = document.body;
-        const type = configEl.getAttribute('data-type');
-        
-        body.classList.add('custom-bg-active');
-
-        if (type === 'solid') {
-            const color = configEl.getAttribute('data-color');
-            if (color) body.style.setProperty('--custom-bg-color', color);
-        } 
-        else if (type === 'gradient') {
-            const start = configEl.getAttribute('data-start');
-            const end = configEl.getAttribute('data-end');
-            const direction = configEl.getAttribute('data-direction') || 'to bottom';
-            
-            if (start && end) {
-                const gradientString = `linear-gradient(${direction}, ${start}, ${end})`;
-                body.style.setProperty('--custom-bg-image', gradientString);
-            }
-        }
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setCustomBackground);
-    } else {
-        setCustomBackground();
-    }
-})();*/
-
 //Error Handling
 window.enOnValidate = function(){
     if($('.other-amt').hasClass('active')){
@@ -546,7 +527,8 @@ window.enOnValidate = function(){
 window.enOnSubmit = function() {
     return new Promise(function(resolve, reject) {
         if ($('body.page-1').length > 0) {
-            var isRecurring = $('input[name="transaction.recurrpay"]:checked').val();
+            syncTributeToSession();
+            /*var isRecurring = $('input[name="transaction.recurrpay"]:checked').val();
             var isTribute = $('#en__field_transaction_inmem:checked').val();
             var tributeType = $('#en__field_transaction_trbopts').val();
             var honoreeName = $('#en__field_transaction_honname').val();
@@ -556,7 +538,7 @@ window.enOnSubmit = function() {
             if (isTribute) {
                 sessionStorage.setItem('tribute_type', tributeType);
                 sessionStorage.setItem('tribute_name', honoreeName);
-            }
+            }*/
         }
         else if ($('body.page-4').length > 0) {
             var spinner = '<i class="fa-solid fa-spinner fa-spin-pulse"></i>';
