@@ -526,9 +526,9 @@ window.enOnValidate = function(){
 
 window.enOnSubmit = function() {
     return new Promise(function(resolve, reject) {
-        if ($('body.page-1').length > 0) {
+        /*if ($('body.page-1').length > 0) {
             syncTributeToSession();
-            /*var isRecurring = $('input[name="transaction.recurrpay"]:checked').val();
+            var isRecurring = $('input[name="transaction.recurrpay"]:checked').val();
             var isTribute = $('#en__field_transaction_inmem:checked').val();
             var tributeType = $('#en__field_transaction_trbopts').val();
             var honoreeName = $('#en__field_transaction_honname').val();
@@ -538,7 +538,7 @@ window.enOnSubmit = function() {
             if (isTribute) {
                 sessionStorage.setItem('tribute_type', tributeType);
                 sessionStorage.setItem('tribute_name', honoreeName);
-            }*/
+            }
         }
         else if ($('body.page-4').length > 0) {
             var spinner = '<i class="fa-solid fa-spinner fa-spin-pulse"></i>';
@@ -546,7 +546,7 @@ window.enOnSubmit = function() {
             $('.en__submit button').text("Processing ");
             $('.en__submit button').append(spinner);
             $('.en__submit button').prop("disabled", true);
-        }
+        }*/
 
         resolve();
     });
