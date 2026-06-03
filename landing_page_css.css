@@ -1,0 +1,316 @@
+/* =========================================================================
+   LANDING PAGE
+   Append to global_css.css. Everything is scoped under body.en__Landing_Page
+   (added in global_js.js) so no other template is affected.
+
+   Depends on: --paletteColor1 / --paletteColor2 (your form already uses these).
+   --paletteColor3 is ThedaCare's button blue; falls back to --paletteColor1
+   if your root_base doesn't define it.
+   ========================================================================= */
+
+/* ---- Scroll reveal --------------------------------------------------------
+   JS adds .visible to content rows as they enter the viewport.
+   Header (.custom-header), footer (.footer) and the form row (.page-1) are
+   excluded in JS, so they are never hidden here. */
+.en__Landing_Page .en__component--row:not(.custom-header):not(.footer):not(.page-1) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease-out, transform .6s ease-out;
+}
+
+.en__Landing_Page .en__component--row.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Never hide rows inside the page builder backend */
+#en__pagebuilder .en__component--row {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .en__Landing_Page .en__component--row {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* ---- Section gutters ------------------------------------------------------ */
+.en__Landing_Page .wrapper,
+.en__Landing_Page .home-hero,
+.en__Landing_Page .sub-hero {
+    padding-left: 112px;
+    padding-right: 112px;
+}
+
+@media (max-width: 991px) {
+    .en__Landing_Page .wrapper,
+    .en__Landing_Page .home-hero,
+    .en__Landing_Page .sub-hero {
+        padding-left: 69px;
+        padding-right: 69px;
+    }
+}
+
+@media (max-width: 650px) {
+    .en__Landing_Page .wrapper,
+    .en__Landing_Page .home-hero,
+    .en__Landing_Page .sub-hero {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* ---- Hero -----------------------------------------------------------------
+   Row: home-hero wrapper  |  hero image tagged .bg-img (JS -> --bg-Img) */
+.en__Landing_Page .home-hero {
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-image: var(--bg-Img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.en__Landing_Page .home-hero .en__component--column {
+    width: 40%;
+    min-width: 360px;
+}
+
+.en__Landing_Page .home-hero h1 {
+    margin-bottom: 16px;
+}
+
+@media (max-width: 991px) {
+    .en__Landing_Page .home-hero {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        min-height: 400px;
+        height: auto;
+        /* fade the image into white on the left so text stays readable */
+        background-image: linear-gradient(to left, rgba(255,255,255,.3) 0%, rgb(255,255,255) 100%), var(--bg-Img);
+        background-position: 60%;
+    }
+
+    .en__Landing_Page .home-hero .en__component--column {
+        width: 100%;
+        max-width: 500px;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .en__Landing_Page .home-hero {
+        background-image: linear-gradient(to bottom, rgba(255,255,255,0) 20%, rgb(255,255,255) 70%), var(--bg-Img);
+        background-size: auto 60%;
+        background-position: 70% 10%;
+    }
+}
+
+/* ---- Sub-hero band + overlapping logo -------------------------------------
+   Row: sub-hero paletteColor1BG  (blue band, white text via inline color)
+   Logo: move the logo image into this row and tag it .logo-container */
+.en__Landing_Page .sub-hero {
+    position: relative;
+    /* Belt-and-suspenders: remove this line if paletteColor1BG already
+       paints the background. */
+    background: var(--paletteColor1);
+}
+
+.en__Landing_Page .sub-hero .en__component--column {
+    padding-top: 70px;
+    padding-bottom: 108px;
+}
+
+.en__Landing_Page .sub-hero .logo-container,
+.en__Landing_Page .sub-hero .en__component--imageblock {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 17%;
+    min-width: 79px;
+    max-width: 152px;
+    z-index: 2;
+}
+
+.en__Landing_Page .sub-hero .logo-container img,
+.en__Landing_Page .sub-hero .en__component--imageblock img {
+    width: 100% !important;
+    max-width: 200px;
+}
+
+/* ---- Icon columns ("Why Share Your Story?") -------------------------------
+   JS wraps the columns in .frow-container > .frow */
+.en__Landing_Page .icon-columns .frow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.en__Landing_Page .icon-columns h4 {
+    color: var(--paletteColor1);
+}
+
+.en__Landing_Page .icon-columns .col {
+    flex: 1;
+    min-width: 300px;
+    max-width: 320px;
+    padding: 0 10px;
+}
+
+.en__Landing_Page .icon-columns .col .en__component--imageblock {
+    height: 95px;
+    margin-bottom: 20px;
+}
+
+.en__Landing_Page .icon-columns .col .en__component--imageblock img {
+    display: block;
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+.en__Landing_Page .icon-columns .col p {
+    padding: 0 30px;
+    margin-top: 15px;
+}
+
+/* ---- Full-width hero ("Your Story Can Inspire Healing") -------------------
+   Row: full-width-hero  |  image tagged .bg-img */
+.en__Landing_Page .full-width-hero {
+    display: flex;
+    align-items: center;
+    height: 40vw;
+    min-height: 500px;
+    background-image: var(--bg-Img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+}
+
+.en__Landing_Page .full-width-hero * {
+    color: #fff;
+}
+
+.en__Landing_Page .full-width-hero .en__component--column {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .en__Landing_Page .full-width-hero p {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .en__Landing_Page .full-width-hero {
+        height: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        /* darken toward the text side on small screens */
+        background-image: linear-gradient(to right, rgba(0,0,0,.2) 0%, rgba(0,0,0,.8) 100%), var(--bg-Img);
+    }
+}
+
+/* ---- Card columns ("Your Gift Makes a Difference") ------------------------
+   JS wraps the columns in .frow-container > .frow */
+.en__Landing_Page .card-columns .frow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.en__Landing_Page .card-columns .col {
+    flex: 1;
+    min-width: 300px;
+    max-width: 416px;
+}
+
+.en__Landing_Page .card-columns .col .en__component--imageblock {
+    margin-bottom: 20px;
+}
+
+.en__Landing_Page .card-columns .col .en__component--imageblock img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.en__Landing_Page .card-columns .col p {
+    padding: 0 30px;
+    margin-top: 15px;
+}
+
+/* ---- Pre-form callout ----------------------------------------------------- */
+.en__Landing_Page .pre-form-callout {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+/* ---- Buttons --------------------------------------------------------------
+   .border-button outline pill, .solid filled, .white for dark backgrounds.
+   .button-parent is added by JS to the <p> wrapping each button. */
+.en__Landing_Page .border-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 16px 24px;
+    border-radius: 30px;
+    border: 2px solid var(--paletteColor3, var(--paletteColor1));
+    color: var(--paletteColor3, var(--paletteColor1));
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 200ms ease;
+}
+
+.en__Landing_Page .border-button.white {
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.en__Landing_Page .border-button.solid,
+.en__Landing_Page .border-button:hover,
+.en__Landing_Page .border-button:focus {
+    background: var(--paletteColor3, var(--paletteColor1));
+    color: var(--paletteColor2);
+}
+
+.en__Landing_Page .border-button.solid:hover,
+.en__Landing_Page .border-button.solid:focus {
+    background: transparent;
+    color: var(--paletteColor3, var(--paletteColor1));
+}
+
+.en__Landing_Page .border-button.white:hover,
+.en__Landing_Page .border-button.white:focus {
+    background: rgba(255,255,255,.2);
+    color: var(--white);
+}
+
+.en__Landing_Page .button-group {
+    gap: 24px;
+    padding: 24px 0;
+}
+
+.en__Landing_Page .button-parent {
+    margin: 0;
+    width: max-content;
+}
+
+@media (max-width: 768px) {
+    .en__Landing_Page .button-group {
+        gap: 8px;
+        padding: 10px 0 0;
+    }
+}
